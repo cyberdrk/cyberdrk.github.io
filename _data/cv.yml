@@ -2,96 +2,108 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Dipti R. Kulkarni
+    - name: Current Role
+      value: Private Credit Analyst at Xander
+    - name: Location
+      value: Mumbai / Thane, Maharashtra, India
     - name: Languages
-      value: English, German
+      value: English, Hindi, Marathi, A2 French
+    - name: Website
+      value: https://cyber.drk.github.io/
+    - name: LinkedIn
+      value: https://www.linkedin.com/in/dipti-kulkarni-34a731144/
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: MBA
+      institution: Indian Institute of Management Calcutta (IIM Calcutta)
+      year: 2022 – 2024
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - Aditya Birla Scholar
+        - Monalisa Gupta Award for all-round excellence (59th Convocation)
+    - title: B.Tech. in Electronics Engineering
+      institution: Veermata Jijabai Technological Institute (VJTI), Mumbai
+      year: 2015 – 2019
       description:
-        - Description 1.
-        - Description 2.
+        - Among Asia's oldest and most prestigious engineering colleges
+        - INSPIRE Scholar (5th rank in HSC XII)
+        - ICSE City Topper (1st in Class X)
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Private Credit Analyst
+      institution: Xander
+      year: 2024 – Present
+    - title: Analyst – Global Markets (Front Office, India Equities)
+      institution: BNP Paribas
+      year: 2024 - 2025
+    - title: Discretionary Trader – Proprietary Desk (Summer Intern)
+      institution: Edelweiss Global Markets 
+      year: 2023
+    - title: Robotics Software Engineer – Industry 5.0 & Cobots
+      institution: Rapyuta Robotics, Tokyo and Bengaluru
+      year: 202=19 - 2020
+    - title: R&D Software Engineer – Cloud and Data Security
+      institution: Protegrity, India (Remote)
+      year: 2021 - 2022
+    - title: International Research Intern – Computer Vision & Color Research
+      institution: Advanced Image Solution Lab, CWNU, South Korea
+      year: 2018
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
+        - Guided by Dr. Oh Seol Kwon
+        - Worked on color gamut processing and single image dehazing
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Awards & Scholarships
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - year: 2024
+      items:
+        - <a href="https://www.linkedin.com/feed/update/urn:li:activity:7206170491760304128/">Monalisa Gupta Award – IIM Calcutta</a>
+    - year: 2023
+      items:
+        - <a href="https://www.linkedin.com/feed/update/urn:li:activity:7043298166946840576">Aditya Birla Scholarship – Among top 15 across India’s premier B-schools</a>
+    - year: 2018
+      items:
+        - 3rd Place – Smart India Hackathon (Ministry of Railways)
+    - year: 2016
+      items:
+        - Pre-Finalist – e-Yantra Robotics Competition (IIT Bombay)
+    - year: 2015
+      items:
+        - INSPIRE Scholar
+        - HSC XII – Institute Rank 5
+    - year: 2013
+      items:
+        - ICSE X – Institute Rank 1
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+- title: Technical Skills
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - Python (2 & 3), MATLAB, C, C++, Java
+    - Git, CI/CD, Docker, ROS, Linux
+    - Embedded C, Microcomputers (Raspberry Pi, Arduino)
+    - Agile methodologies, Jira
+    - pandas, Jupyter
+
+- title: Volunteering & Leadership
+  type: list
+  contents:
+    - Media Strategist, Event & Design Head, PR Manager – VJTI Gymkhana (2016–2018)
+    - Chief Mentorship Officer – IEEE VJTI (2017–2018)
+
+- title: Certifications
+  type: list
+  contents:
+    - <a href="https://my.divessi.com/code/thickbox/ccard_db_query.php?ccard_uid=791008M6499857374201-IN">Freediving Level 1 – Scuba Schools International</a>
+    - Sailing Level 1 – Yachting Association of India
+
+- title: Personal Interests
+  type: list
+  contents:
+    - <u>Adventure:</u> Internationally certified freediver, recreational surfer, skateboarder
+    - <u>Learning:</u> A2 French, bibliophile, Tintin collector
+    - <u>Quizzing:</u> Serial quizzer and trivia enthusiast
+    - <u>Sports:</u> Institute Football Team, enjoys watching Ladies’ Golf
