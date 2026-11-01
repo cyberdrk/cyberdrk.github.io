@@ -199,12 +199,17 @@ html.sea-on .post-title::after {
 @media (min-width: 576px) {
   .navbar .nav-item > a.nav-link {
     position: relative;
-    padding-top: 1.15rem;
   }
 
+  /* Extra room at the top of the bar for the fin */
+  .navbar {
+    padding-top: calc(0.5rem + 12px);
+  }
+
+  /* Sits in the space above the label, so the menu keeps its alignment */
   .navbar .nav-item > a.nav-link::before {
     position: absolute;
-    top: 0;
+    top: -17px;
     left: 50%;
     width: 22px;
     height: 18px;
@@ -719,7 +724,10 @@ html.sea-on [contenteditable="true"] {
 .navbar-brand.title {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+}
+
+.navbar-brand .avatar-small {
+  margin-right: 0.55rem;
 }
 
 .avatar-small img {
