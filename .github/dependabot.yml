@@ -1,0 +1,18 @@
+# Opens pull requests when GitHub Actions or Ruby gems used to build the site
+# have security fixes or new versions. Review and merge them like any other change.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      actions:
+        patterns: ["*"]
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      gems:
+        patterns: ["*"]
