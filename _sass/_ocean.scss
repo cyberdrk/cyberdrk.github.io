@@ -639,6 +639,7 @@ html.sea-on [contenteditable="true"] {
 /* ---------- Photo beside the name ---------- */
 
 .post-header.has-avatar {
+  margin-bottom: 1.6rem;
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 1.1rem;
