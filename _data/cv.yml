@@ -10,7 +10,7 @@
     - name: Languages
       value: English, Hindi, Marathi, A2 French
     - name: Website
-      value: https://cyber.drk.github.io/
+      value: https://cyberdrk.github.io/
     - name: LinkedIn
       value: https://www.linkedin.com/in/dipti-kulkarni-34a731144/
 
@@ -39,16 +39,16 @@
       year: 2024 – Present
     - title: Analyst – Global Markets (Front Office, India Equities)
       institution: BNP Paribas
-      year: 2024 - 2025
+      year: 2024 – 2025
     - title: Discretionary Trader – Proprietary Desk (Summer Intern)
-      institution: Edelweiss Global Markets 
+      institution: Edelweiss Global Markets
       year: 2023
-    - title: Robotics Software Engineer – Industry 5.0 & Cobots
-      institution: Rapyuta Robotics, Tokyo and Bengaluru
-      year: 202=19 - 2020
     - title: R&D Software Engineer – Cloud and Data Security
       institution: Protegrity, India (Remote)
-      year: 2021 - 2022
+      year: 2021 – 2022
+    - title: Robotics Software Engineer – Industry 5.0 & Cobots
+      institution: Rapyuta Robotics, Tokyo and Bengaluru
+      year: 2019 – 2020
     - title: International Research Intern – Computer Vision & Color Research
       institution: Advanced Image Solution Lab, CWNU, South Korea
       year: 2018

@@ -2,43 +2,43 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Private Credit Investments at Xander · IIM Calcutta · VJTI
 
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+# To add a photo: upload it as assets/img/prof_pic.jpg, then uncomment the profile block below.
+# profile:
+#   align: right
+#   image: prof_pic.jpg
+#   image_circular: false
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false
+social: true
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
 ---
 
-professional: Private Credit Investments at Xander, Global Markets at BNP Paribas, Prop Trading at Edelweiss, AI, Robotics and Industry 5.0 (Cobots and Warehouse Automation) in Tokyo, AI and Computer Vision Color Research in South Korea, Cloud and Data Security Agile Research and Development in India 
+I work in **private credit investments** at Xander. Before finance, I spent several years as an engineer in **robotics, AI and cloud security** across Japan, South Korea and India, an unusual path that shapes how I look at businesses and technology today.
 
-academic: IIM Calcutta (ABG Scholar), B. Tech. EE, VJTI '19; 5th in XII (INSPIRE Scholar), 1st in X (ICSE School Topper) 
+#### Professional
 
-personal: adventure lover (internationally certified freediver, recreational surfer, skateboarder), lifelong learner (A2 French), bibliophile, Tintin Collector, serial quizzer and Institute Football team. Enjoy watching ladies' golf. 
+- **Private Credit Investments** at Xander
+- **Global Markets** at BNP Paribas
+- **Proprietary Trading** at Edelweiss
+- **AI, Robotics and Industry 5.0** (cobots and warehouse automation) in Tokyo
+- **AI and Computer Vision** color research in South Korea
+- **Cloud and Data Security** agile research and development in India
 
-I have completed my graduation, from Veermata Jijabai Technological Institute (VJTI), a 100+ year old institute, Asia’s oldest and prestigious engineering institutions, with a four year Bachelor of 
-Technology (B. Tech.) program, majoring in Electronics Engineering
+#### Academic
 
+- **MBA, IIM Calcutta** (Aditya Birla Scholar)
+- **B.Tech. in Electronics Engineering, VJTI** '19, one of Asia's oldest engineering institutions
+- 5th in Class XII (INSPIRE Scholar), 1st in Class X (ICSE School Topper)
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+#### Personal
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Adventure lover: internationally certified freediver, recreational surfer and skateboarder. Lifelong learner (A2 French), bibliophile and Tintin collector. Serial quizzer, played for the institute football team, and I enjoy watching ladies' golf.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+More on my engineering background on the [tech](/tech/) page, and the full story on my [cv](/cv/).
