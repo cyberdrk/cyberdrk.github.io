@@ -1,109 +1,148 @@
+# CV content. "logo" is the organization's website; its site icon is shown.
+# Links point to the matching sections of LinkedIn.
+# LinkedIn sections: https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/<experience|education|honors|certifications|featured>/
+
 - title: General Information
   type: map
   contents:
     - name: Full Name
       value: Dipti R. Kulkarni
     - name: Current Role
-      value: Private Credit Analyst at Xander
+      value: Investment Professional, Private Credit at Nixa Asset Management
     - name: Location
-      value: Mumbai / Thane, Maharashtra, India
+      value: Mumbai, Maharashtra, India
     - name: Languages
-      value: English, Hindi, Marathi, A2 French
-    - name: Website
-      value: https://cyber.drk.github.io/
+      value: English, Hindi, Marathi (native); French, Kannada (elementary)
     - name: LinkedIn
-      value: https://www.linkedin.com/in/dipti-kulkarni-34a731144/
+      value: <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/">linkedin.com/in/dipti-kulkarni-34a731144</a>
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: Investment Professional, Private Credit
+      institution: Nixa Asset Management
+      logo: nixainvestments.com
+      year: Mar 2025 – Present
+      location: Mumbai
+      description:
+        - Private credit and special situations
+        - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">View on LinkedIn ↗</a>
+    - title: Analyst, Global Markets – India Equities (Front Office)
+      institution: BNP Paribas CIB
+      logo: bnpparibas.com
+      year: Apr 2024 – Jan 2025
+      location: Mumbai
+      description:
+        - Reported to the CEO, India Equities
+        - Equities and equity capital markets
+        - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">View on LinkedIn ↗</a>
+    - title: Fund Manager, Joka Advantage Fund
+      institution: Finance and Investments Club, IIM Calcutta
+      logo: iimcal.ac.in
+      year: Jun 2023 – Apr 2024
+      location: Kolkata
+      description:
+        - Managed the student-run investment fund of IIM Calcutta
+        - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">View on LinkedIn ↗</a>
+    - title: Discretionary Trading Intern (awarded PPO)
+      institution: Edelweiss Global Markets
+      logo: edelweissfin.com
+      year: Apr 2023 – Jun 2023
+      location: Mumbai
+      description:
+        - Prop trading desk (front office), long-short India equities
+        - Technical, fundamental and quant strategies; Bloomberg Terminal
+        - Awarded a pre-placement offer
+        - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">New joinee feature and details on LinkedIn ↗</a>
+    - title: Software Engineer, Research and Development
+      institution: Protegrity (Cloud and Data Security)
+      logo: protegrity.com
+      year: Jan 2021 – Mar 2022
+      location: Remote
+      description:
+        - R&D team in an agile environment; Python, Debian/Linux, Git, CI, AWS EC2, VMware vCloud
+        - Streamlined the team's productivity pipeline and ran knowledge sessions
+        - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">View on LinkedIn ↗</a>
+    - title: Software Engineer I, Robotics Systems and Science
+      institution: Rapyuta Robotics
+      logo: rapyuta-robotics.com
+      year: Nov 2019 – Aug 2020
+      location: Bengaluru
+      description:
+        - Professional Services and Fleet Management AI teams; automated and simulated forklifts in a multi-level warehouse for a leading Japanese conglomerate
+        - Python, ROS, Gazebo, Docker, REST APIs
+        - Spot Award, April 2020, for ownership of the full simulation stack
+        - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">View on LinkedIn ↗</a>
+    - title: Software Engineer I, Robotics Systems and Science
+      institution: Rapyuta Robotics
+      logo: rapyuta-robotics.com
+      year: Jul 2019 – Nov 2019
+      location: Tokyo
+      description:
+        - Wrote motion planning in Python and ROS for barcode and magnetic strip scanners on an automated ground vehicle for a leading mining and manufacturing company in Osaka
+        - Demonstrated multi-robot collaboration (Pick Assist AMR and rapyuta.io cloud platform) to clients and press at Kyoto Smart City Expo 2019
+        - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">Expo press coverage and media on LinkedIn ↗</a>
+    - title: Research Intern, Imaging Systems Laboratory
+      institution: Changwon National University
+      logo: changwon.ac.kr
+      year: May 2018 – Jul 2018
+      location: South Korea
+      description:
+        - Government of South Korea funded research under Prof. Oh-Seol Kwon
+        - Invertible colour gamut mapping (UHD to HD) and a new gamut expansion algorithm; paper submitted to IET Electronics Letters 2018
+        - Single image dehazing of satellite images; face recognition with CNNs (99.67% on LFW)
+        - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">Certificate, lab and internship blog on LinkedIn ↗</a>
 
 - title: Education
   type: time_table
   contents:
     - title: MBA
-      institution: Indian Institute of Management Calcutta (IIM Calcutta)
+      institution: Indian Institute of Management Calcutta
+      logo: iimcal.ac.in
       year: 2022 – 2024
       description:
-        - Aditya Birla Scholar
-        - Monalisa Gupta Award for all-round excellence (59th Convocation)
-    - title: B.Tech. in Electronics Engineering
+        - Aditya Birla Scholar, Class of 2022–23 (sole recipient at IIM Calcutta)
+        - Monalisa Gupta Award, 59th Annual Convocation
+        - Top 13 in the admission merit list
+        - National Finalist, ET Ascent Dewang Mehta National Education Awards 2022
+        - Campus Finalist, Venture Capital Investment Challenge 2022
+        - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/education/">View on LinkedIn ↗</a>
+    - title: B.Tech., Electronics Engineering
       institution: Veermata Jijabai Technological Institute (VJTI), Mumbai
+      logo: vjti.ac.in
       year: 2015 – 2019
       description:
-        - Among Asia's oldest and most prestigious engineering colleges
-        - INSPIRE Scholar (5th rank in HSC XII)
-        - ICSE City Topper (1st in Class X)
-
-- title: Experience
-  type: time_table
-  contents:
-    - title: Private Credit Analyst
-      institution: Xander
-      year: 2024 – Present
-    - title: Analyst – Global Markets (Front Office, India Equities)
-      institution: BNP Paribas
-      year: 2024 - 2025
-    - title: Discretionary Trader – Proprietary Desk (Summer Intern)
-      institution: Edelweiss Global Markets 
-      year: 2023
-    - title: Robotics Software Engineer – Industry 5.0 & Cobots
-      institution: Rapyuta Robotics, Tokyo and Bengaluru
-      year: 202=19 - 2020
-    - title: R&D Software Engineer – Cloud and Data Security
-      institution: Protegrity, India (Remote)
-      year: 2021 - 2022
-    - title: International Research Intern – Computer Vision & Color Research
-      institution: Advanced Image Solution Lab, CWNU, South Korea
-      year: 2018
+        - First Class; Double Award Winner, Department of Electrical Engineering
+        - Publicis Sapient placement offer (1 of 5 selected from 630+)
+        - "Capstone: led a team to build an autonomously navigating quadrotor; top 17 at Aero India 2019 Student's Pavilion"
+        - Vice Captain, college football team
+        - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/education/">Project and media on LinkedIn ↗</a>
+    - title: HSC, Mathematics and Computer Science
+      institution: Nowrosjee Wadia College, Pune
+      year: 2013 – 2015
       description:
-        - Guided by Dr. Oh Seol Kwon
-        - Worked on color gamut processing and single image dehazing
+        - 5th in a batch of 1,200; INSPIRE Scholar (top 1% in Class XII science)
+        - 96/100 in Computer Science (department rank 1)
+    - title: ICSE, Mathematics, Science and Computer Science
+      institution: Pawar Public School, Pune
+      year: 2009 – 2013
+      description:
+        - School topper and Pune City ICSE X topper (95.5%)
+        - Chief Student Editor, school magazine; EUMIND Europe Meets India exchange
 
-- title: Awards & Scholarships
-  type: time_table
-  contents:
-    - year: 2024
-      items:
-        - <a href="https://www.linkedin.com/feed/update/urn:li:activity:7206170491760304128/">Monalisa Gupta Award – IIM Calcutta</a>
-    - year: 2023
-      items:
-        - <a href="https://www.linkedin.com/feed/update/urn:li:activity:7043298166946840576">Aditya Birla Scholarship – Among top 15 across India’s premier B-schools</a>
-    - year: 2018
-      items:
-        - 3rd Place – Smart India Hackathon (Ministry of Railways)
-    - year: 2016
-      items:
-        - Pre-Finalist – e-Yantra Robotics Competition (IIT Bombay)
-    - year: 2015
-      items:
-        - INSPIRE Scholar
-        - HSC XII – Institute Rank 5
-    - year: 2013
-      items:
-        - ICSE X – Institute Rank 1
-
-- title: Technical Skills
+- title: Skills
   type: list
   contents:
-    - Python (2 & 3), MATLAB, C, C++, Java
-    - Git, CI/CD, Docker, ROS, Linux
-    - Embedded C, Microcomputers (Raspberry Pi, Arduino)
-    - Agile methodologies, Jira
-    - pandas, Jupyter
-
-- title: Volunteering & Leadership
-  type: list
-  contents:
-    - Media Strategist, Event & Design Head, PR Manager – VJTI Gymkhana (2016–2018)
-    - Chief Mentorship Officer – IEEE VJTI (2017–2018)
+    - "Finance: credit analysis, loan underwriting, private credit, special situations, distressed debt, equities"
+    - "Tools: Bloomberg Terminal, Excel, Python"
+    - "Engineering: Python, ROS, Gazebo, MATLAB, TensorFlow, Linux, Git, CI, Docker, AWS"
 
 - title: Certifications
   type: list
   contents:
-    - <a href="https://my.divessi.com/code/thickbox/ccard_db_query.php?ccard_uid=791008M6499857374201-IN">Freediving Level 1 – Scuba Schools International</a>
-    - Sailing Level 1 – Yachting Association of India
-
-- title: Personal Interests
-  type: list
-  contents:
-    - <u>Adventure:</u> Internationally certified freediver, recreational surfer, skateboarder
-    - <u>Learning:</u> A2 French, bibliophile, Tintin collector
-    - <u>Quizzing:</u> Serial quizzer and trivia enthusiast
-    - <u>Sports:</u> Institute Football Team, enjoys watching Ladies’ Golf
+    - Fundamentals of Credit
+    - Statistics Foundations
+    - French A1 and A2 (220 hours, A2 fast track)
+    - Freediving Level I, Scuba Schools International
+    - Sailing Level 1, Yachting Association of India
+    - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/certifications/">View on LinkedIn ↗</a>

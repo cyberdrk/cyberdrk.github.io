@@ -1,0 +1,82 @@
+{% include ocean-sprites.liquid %}
+<div class="ocean" aria-hidden="true">
+  <svg class="jelly">
+    <use href="#sea-jellyfish" />
+  </svg>
+  <svg class="whale">
+    <use href="#sea-whale" />
+  </svg>
+  <svg class="dolphin">
+    <use href="#sea-dolphin" />
+  </svg>
+  <svg class="star">
+    <use href="#sea-starfish" />
+  </svg>
+  <svg class="horse">
+    <use href="#sea-seahorse" />
+  </svg>
+  <svg class="octo">
+    <use href="#sea-octopus" />
+  </svg>
+  <svg class="turtle">
+    <use href="#sea-turtle" />
+  </svg>
+  <svg class="crab">
+    <use href="#sea-crab" />
+  </svg>
+  <svg class="shell">
+    <use href="#sea-shell" />
+  </svg>
+  <svg class="weed1">
+    <use href="#sea-weed" />
+  </svg>
+  <svg class="weed2">
+    <use href="#sea-weed" />
+  </svg>
+  <svg class="bub1">
+    <use href="#sea-bubbles" />
+  </svg>
+  <svg class="bub2">
+    <use href="#sea-bubbles" />
+  </svg>
+</div>
+<script>
+  // Sea mode: off by default (professional); the switch in the menu turns on the
+  // creatures, starfish cursor and fins. Each visitor's choice is remembered.
+  (function () {
+    var root = document.documentElement;
+    try {
+      if (localStorage.getItem('seaMode') === 'on') root.classList.add('sea-on');
+    } catch (e) {}
+    document.addEventListener('DOMContentLoaded', function () {
+      var button = document.getElementById('sea-switch');
+      if (!button) return;
+      function sync() {
+        button.setAttribute('aria-checked', root.classList.contains('sea-on') ? 'true' : 'false');
+      }
+      sync();
+      button.addEventListener('click', function () {
+        root.classList.toggle('sea-on');
+        try {
+          localStorage.setItem('seaMode', root.classList.contains('sea-on') ? 'on' : 'off');
+        } catch (e) {}
+        sync();
+      });
+    });
+  })();
+
+  // Starfish cursor winks while the mouse button is held, then smiles again.
+  (function () {
+    var root = document.documentElement;
+    var timer;
+    document.addEventListener('mousedown', function () {
+      clearTimeout(timer);
+      root.classList.add('starfish-wink');
+    });
+    document.addEventListener('mouseup', function () {
+      timer = setTimeout(function () {
+        root.classList.remove('starfish-wink');
+      }, 350);
+    });
+  })();
+</script>

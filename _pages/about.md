@@ -2,43 +2,62 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Investment Professional, Private Credit · IIM Calcutta '24 (Aditya Birla Scholar) · VJTI '19
 
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+# To add a photo: upload it as assets/img/prof_pic.jpg, then uncomment the profile block below.
+# profile:
+#   align: right
+#   image: prof_pic.jpg
+#   image_circular: true
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+# Photo beside the name: "fun" shows in sea mode, "pro" otherwise.
+# For pro, upload your LinkedIn photo as assets/img/prof_pic.jpg and set pro: prof_pic.jpg
+avatar:
+  fun: https://github.com/cyberdrk.png?size=240
+  # pro: prof_pic.jpg
+
+selected_papers: false
+social: true
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
 ---
 
-professional: Private Credit Investments at Xander, Global Markets at BNP Paribas, Prop Trading at Edelweiss, AI, Robotics and Industry 5.0 (Cobots and Warehouse Automation) in Tokyo, AI and Computer Vision Color Research in South Korea, Cloud and Data Security Agile Research and Development in India 
+I'm an IIM Calcutta MBA with ~5 years across **finance, strategy and tech**. Today I'm an investment professional in **private credit** at Nixa Asset Management, after Global Markets at BNP Paribas, proprietary trading at Edelweiss, and running IIM Calcutta's student investment fund. Before business school I was an engineer: building collaborative robots and warehouse automation in Tokyo, doing computer vision research in South Korea, and writing secure cloud software in India. That mix lets me look at a business through both its numbers and the technology behind it.
 
-academic: IIM Calcutta (ABG Scholar), B. Tech. EE, VJTI '19; 5th in XII (INSPIRE Scholar), 1st in X (ICSE School Topper) 
+<section class="ocean-section" markdown="1">
 
-personal: adventure lover (internationally certified freediver, recreational surfer, skateboarder), lifelong learner (A2 French), bibliophile, Tintin Collector, serial quizzer and Institute Football team. Enjoy watching ladies' golf. 
+#### Professional
 
-I have completed my graduation, from Veermata Jijabai Technological Institute (VJTI), a 100+ year old institute, Asia’s oldest and prestigious engineering institutions, with a four year Bachelor of 
-Technology (B. Tech.) program, majoring in Electronics Engineering
+- **Private Credit** at [Nixa Asset Management](https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/)
+- **Global Markets, India Equities** at [BNP Paribas](https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/)
+- **Fund Manager**, [Joka Advantage Fund](https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/), IIM Calcutta's student-run fund
+- **Proprietary Trading** at [Edelweiss Global Markets](https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/) (pre-placement offer)
+- **Cloud and Data Security** R&D at [Protegrity](https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/)
+- **AI, Robotics and Industry 5.0** (cobots and warehouse automation) at [Rapyuta Robotics](https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/), Tokyo and Bengaluru
+- **Computer Vision** colour research at [Changwon National University](https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/), South Korea
 
+</section>
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+<section class="ocean-section" markdown="1">
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+#### Academic
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+- **MBA, IIM Calcutta** (Aditya Birla Scholar, Monalisa Gupta Award)
+- **B.Tech. in Electronics Engineering, VJTI** '19, one of Asia's oldest engineering institutions
+- 5th in Class XII (INSPIRE Scholar), 1st in Class X (ICSE School Topper)
+
+</section>
+
+<section class="ocean-section" markdown="1">
+
+#### Personal
+
+Adventure lover: SSI Level I freediver, Yachting Association of India Level 1 sailor, recreational surfer and surfskater. Lifelong learner (A2 French), bibliophile and Tintin collector. I support the Akshaya Patra Foundation and OGQ. Serial quizzer, played for the institute football team, and I enjoy watching ladies' golf.
+
+</section>
+
+See my [achievements](/achievements/), my engineering background on the [tech](/tech/) page, and the full story on my [cv](/cv/).

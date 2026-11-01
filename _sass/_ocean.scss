@@ -1,0 +1,702 @@
+/*******************************************************************************
+ * Ocean theme: light turquoise background, dark navy text, outline sea
+ * creatures drifting behind the content, a dolphin fin that pops up when you
+ * hover a section, and a smiling starfish cursor that winks on click.
+ ******************************************************************************/
+
+/* Colors are tokens so light and dark mode share every rule below.
+   Light: turquoise sea, navy text. Dark: deep navy sea, white text. */
+:root,
+html[data-theme="light"] {
+  --ocean-text: #0b2e59;
+  --ocean-text-soft: #3b5f82;
+  --ocean-accent: #0a7ea4;
+  --ocean-line: rgba(11, 46, 89, 0.22);
+  --ocean-line-soft: rgba(11, 46, 89, 0.14);
+  --ocean-glass: rgba(255, 255, 255, 0.55);
+  --ocean-border: rgba(11, 46, 89, 0.08);
+  --ocean-shadow: rgba(10, 126, 164, 0.14);
+  --ocean-nav: rgba(222, 245, 247, 0.75);
+  --ocean-sea: linear-gradient(180deg, #cdf2f5 0%, #e3f7f9 45%, #c4ecf2 100%);
+
+  --global-bg-color: #def5f7;
+  --global-text-color: var(--ocean-text);
+  --global-text-color-light: var(--ocean-text-soft);
+  --global-theme-color: var(--ocean-accent);
+  --global-hover-color: var(--ocean-accent);
+  --global-hover-text-color: #ffffff;
+  --global-card-bg-color: var(--ocean-glass);
+  --global-divider-color: var(--ocean-border);
+  --global-footer-bg-color: transparent;
+  --global-footer-text-color: var(--ocean-text-soft);
+  --global-footer-link-color: var(--ocean-text);
+  --global-code-bg-color: rgba(10, 126, 164, 0.08);
+  --global-back-to-top-bg-color: rgba(11, 46, 89, 0.55);
+}
+
+@mixin ocean-dark {
+  color-scheme: dark;
+  --ocean-text: #f3f8fb;
+  --ocean-text-soft: #b8d0e0;
+  --ocean-accent: #6fd6ea;
+  --ocean-line: rgba(255, 255, 255, 0.2);
+  --ocean-line-soft: rgba(255, 255, 255, 0.13);
+  --ocean-glass: rgba(255, 255, 255, 0.06);
+  --ocean-border: rgba(255, 255, 255, 0.1);
+  --ocean-shadow: rgba(0, 0, 0, 0.35);
+  --ocean-nav: rgba(6, 26, 51, 0.78);
+  --ocean-sea: linear-gradient(180deg, #061a33 0%, #0b2e59 50%, #082448 100%);
+
+  --global-bg-color: #0b2e59;
+  --global-code-bg-color: rgba(111, 214, 234, 0.1);
+  --global-back-to-top-bg-color: rgba(255, 255, 255, 0.2);
+  --global-hover-text-color: #061a33;
+}
+
+/* Visitor chose dark with the toggle */
+html[data-theme="dark"] {
+  @include ocean-dark;
+  --global-text-color: var(--ocean-text);
+  --global-text-color-light: var(--ocean-text-soft);
+  --global-theme-color: var(--ocean-accent);
+  --global-hover-color: var(--ocean-accent);
+  --global-card-bg-color: var(--ocean-glass);
+  --global-divider-color: var(--ocean-border);
+  --global-footer-bg-color: transparent;
+  --global-footer-text-color: var(--ocean-text-soft);
+  --global-footer-link-color: var(--ocean-text);
+}
+
+/* Device is in dark mode and the visitor hasn't picked light */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    @include ocean-dark;
+  }
+}
+
+/* ---------- Background and type ---------- */
+
+html,
+body {
+  background: var(--ocean-sea) fixed;
+  color: var(--ocean-text);
+}
+
+/* Roboto, the theme's original face: light for reading, heavier only for headings */
+body {
+  font-family:
+    "Roboto",
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  font-weight: 300;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title,
+.card-title,
+.navbar-brand,
+.navbar .nav-link {
+  font-family:
+    "Roboto",
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  color: var(--ocean-text);
+  letter-spacing: 0;
+}
+
+h1,
+.post-title {
+  font-weight: 300;
+}
+
+h2,
+h3,
+h4,
+.card-title {
+  font-weight: 400;
+}
+
+strong,
+b {
+  font-weight: 500;
+}
+
+/* Name in one even weight (no bold first name) */
+.post-title .font-weight-bold,
+.navbar-brand .font-weight-bold {
+  font-weight: inherit !important;
+}
+
+.desc,
+.post-description {
+  color: var(--ocean-text-soft);
+}
+
+a {
+  color: var(--ocean-accent);
+}
+
+strong,
+b {
+  color: var(--ocean-text);
+}
+
+/* Navbar: frosted sea glass */
+.navbar,
+.navbar.navbar-light {
+  background-color: var(--ocean-nav) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 var(--ocean-border);
+}
+
+.navbar .nav-link,
+.navbar #light-toggle,
+.navbar #search-toggle {
+  color: var(--ocean-text) !important;
+}
+
+.navbar .nav-link {
+  font-weight: 300;
+}
+
+.navbar .nav-item.active > .nav-link {
+  font-weight: 500;
+}
+
+/* Dolphin fin pops up under a menu tab on hover */
+@media (min-width: 576px) {
+  .navbar .nav-item > a.nav-link {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 1.15rem;
+  }
+
+  .navbar .nav-item > a.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 22px;
+    height: 18px;
+    margin-left: -11px;
+    background: url("../img/dolphin-fin.svg") no-repeat center bottom / contain;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+  }
+
+  html.sea-on .navbar .nav-item > a.nav-link:hover::after,
+  html.sea-on .navbar .nav-item > a.nav-link:focus-visible::after {
+    transform: translateY(0);
+  }
+}
+
+/* Keep page content above the creatures (navbar is already fixed-position) */
+.container[role="main"],
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  z-index: 1030;
+}
+
+footer {
+  padding: 1.2rem 0;
+  font-size: 0.85rem;
+}
+
+/* ---------- Outline creatures in the background ---------- */
+
+.ocean {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  color: var(--ocean-line);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.6s ease,
+    visibility 0s linear 0.6s;
+}
+
+/* Creatures appear only in sea mode */
+html.sea-on .ocean {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease;
+}
+
+.ocean svg {
+  position: absolute;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+  animation: ocean-bob 9s ease-in-out infinite;
+}
+
+/* Kept toward the edges so text stays clear */
+.ocean .jelly {
+  top: 9%;
+  left: 2%;
+  width: 92px;
+  height: 110px;
+  animation-duration: 10s;
+}
+.ocean .whale {
+  top: 14%;
+  right: 3%;
+  width: 150px;
+  height: 104px;
+  animation-duration: 12s;
+  animation-delay: -3s;
+}
+.ocean .star {
+  top: 40%;
+  left: 4%;
+  width: 70px;
+  height: 70px;
+  animation-duration: 8s;
+  animation-delay: -2s;
+}
+.ocean .horse {
+  top: 42%;
+  right: 4%;
+  width: 66px;
+  height: 108px;
+  animation-duration: 11s;
+  animation-delay: -5s;
+}
+.ocean .octo {
+  top: 66%;
+  left: 2%;
+  width: 100px;
+  height: 100px;
+  animation-duration: 13s;
+  animation-delay: -4s;
+}
+.ocean .turtle {
+  top: 70%;
+  right: 5%;
+  width: 120px;
+  height: 90px;
+  animation-name: ocean-swim;
+  animation-duration: 18s;
+}
+.ocean .crab {
+  bottom: 3%;
+  left: 22%;
+  width: 96px;
+  height: 72px;
+  animation-name: ocean-scuttle;
+  animation-duration: 6s;
+}
+.ocean .shell {
+  bottom: 4%;
+  right: 24%;
+  width: 64px;
+  height: 58px;
+  animation-duration: 14s;
+}
+.ocean .dolphin {
+  top: 25%;
+  left: 1%;
+  width: 110px;
+  height: 78px;
+  animation-name: ocean-swim;
+  animation-duration: 16s;
+  animation-delay: -6s;
+}
+.ocean .weed1 {
+  bottom: -6px;
+  left: 6%;
+  width: 70px;
+  height: 110px;
+  animation-name: ocean-sway;
+  animation-duration: 7s;
+  transform-origin: bottom center;
+}
+.ocean .weed2 {
+  bottom: -6px;
+  right: 8%;
+  width: 60px;
+  height: 96px;
+  animation-name: ocean-sway;
+  animation-duration: 8s;
+  animation-delay: -3s;
+  transform-origin: bottom center;
+}
+.ocean .bub1 {
+  bottom: -90px;
+  left: 34%;
+  width: 40px;
+  height: 54px;
+  animation: ocean-rise 18s linear infinite;
+}
+.ocean .bub2 {
+  bottom: -90px;
+  right: 34%;
+  width: 32px;
+  height: 44px;
+  animation: ocean-rise 22s linear infinite;
+  animation-delay: -9s;
+}
+
+@keyframes ocean-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(3deg);
+  }
+}
+
+@keyframes ocean-swim {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(22px) translateY(-8px);
+  }
+  50% {
+    transform: translateX(44px) translateY(0);
+  }
+  75% {
+    transform: translateX(22px) translateY(8px);
+  }
+}
+
+@keyframes ocean-scuttle {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes ocean-sway {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes ocean-rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-115vh);
+    opacity: 0;
+  }
+}
+
+/* ---------- Sections and the dolphin fin on hover ---------- */
+
+.ocean-section,
+.cv .card {
+  position: relative;
+  overflow: hidden;
+  background: var(--ocean-glass);
+  border: 1px solid var(--ocean-border);
+  border-radius: 18px;
+  padding: 1.1rem 1.4rem 2.4rem;
+  margin-bottom: 1.2rem;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.ocean-section > :last-child {
+  margin-bottom: 0;
+}
+
+.ocean-section:hover,
+.cv .card:hover {
+  box-shadow: 0 8px 24px var(--ocean-shadow);
+  transform: translateY(-2px);
+}
+
+/* The fin hides below the section's bottom edge, then glides up and along */
+.ocean-section::after,
+.cv .card::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: -2px;
+  width: 64px;
+  height: 52px;
+  background: url("../img/dolphin-fin.svg") no-repeat center bottom / contain;
+  transform: translateY(100%);
+  opacity: 0;
+  transition:
+    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.2s ease,
+    right 1.6s ease-in-out;
+  pointer-events: none;
+}
+
+html.sea-on .ocean-section:hover::after,
+html.sea-on .cv .card:hover::after {
+  transform: translateY(0);
+  opacity: 1;
+  right: 60%;
+}
+
+/* ---------- Starfish cursor: smiles, and winks when you click ---------- */
+
+/* Only in sea mode */
+html.sea-on,
+html.sea-on body,
+html.sea-on a,
+html.sea-on button,
+html.sea-on label,
+html.sea-on summary,
+html.sea-on [role="button"],
+html.sea-on .nav-link {
+  cursor:
+    url("../img/cursor-starfish.svg") 16 3,
+    auto;
+}
+
+html.sea-on.starfish-wink,
+html.sea-on.starfish-wink * {
+  cursor:
+    url("../img/cursor-starfish-wink.svg") 16 3,
+    auto !important;
+}
+
+html.sea-on input,
+html.sea-on textarea,
+html.sea-on [contenteditable="true"] {
+  cursor: text;
+}
+
+/* ---------- Phones, reduced motion, print ---------- */
+
+@media (max-width: 768px) {
+  .ocean {
+    color: var(--ocean-line-soft);
+  }
+  .ocean .dolphin,
+  .ocean .star,
+  .ocean .horse,
+  .ocean .shell,
+  .ocean .bub2 {
+    display: none;
+  }
+  .ocean .jelly {
+    width: 60px;
+    height: 72px;
+  }
+  .ocean .whale {
+    width: 96px;
+    height: 66px;
+  }
+  .ocean .octo,
+  .ocean .turtle {
+    width: 72px;
+    height: 60px;
+  }
+  .ocean-section,
+  .cv .card {
+    padding: 1rem 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocean svg {
+    animation: none !important;
+  }
+  .ocean .bub1,
+  .ocean .bub2 {
+    display: none;
+  }
+  .ocean-section,
+  .cv .card,
+  .ocean-section::after,
+  .cv .card::after,
+  .navbar .nav-item > a.nav-link::after {
+    transition: none;
+  }
+}
+
+@media print {
+  .ocean {
+    display: none;
+  }
+  html,
+  body {
+    background: #ffffff;
+  }
+  .ocean-section,
+  .cv .card {
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+/* CV date badges: wrap long ranges ("Mar 2025 – Present") instead of overlapping the title */
+.cv .table-cv .badge {
+  white-space: normal;
+  line-height: 1.35;
+  padding: 0.3em 0.45em;
+  max-width: 82px;
+  min-width: 0 !important;
+}
+
+/* ---------- Sea mode switch in the menu ---------- */
+
+.sea-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.35rem 0.4rem 0;
+  padding: 0.2rem 0.3rem;
+  border: 0;
+  background: none;
+  color: var(--ocean-text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.sea-switch:focus-visible {
+  outline: 2px solid var(--ocean-accent);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+.sea-switch-track {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--ocean-border);
+  box-shadow: inset 0 0 0 1px var(--ocean-line);
+  transition: background 0.3s ease;
+}
+
+.sea-switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.3s ease;
+}
+
+/* On: the track fills with sea and the knob becomes the smiling starfish */
+.sea-switch[aria-checked="true"] .sea-switch-track {
+  background: linear-gradient(90deg, #39b6d0, #0a7ea4);
+}
+
+.sea-switch[aria-checked="true"] .sea-switch-knob {
+  transform: translateX(18px) rotate(360deg);
+  background: transparent url("../img/cursor-starfish.svg") no-repeat center / 20px 20px;
+  box-shadow: none;
+}
+
+/* ---------- Photo beside the name ---------- */
+
+.post-header.has-avatar {
+  margin-bottom: 1.6rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.1rem;
+  align-items: center;
+}
+
+.post-header.has-avatar .desc {
+  grid-column: 2;
+  margin-bottom: 0;
+}
+
+.post-header.has-avatar .post-title {
+  margin-bottom: 0.15rem;
+}
+
+.avatar {
+  grid-row: span 2;
+  display: block;
+  width: 88px;
+  height: 88px;
+}
+
+.avatar img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--ocean-glass);
+  box-shadow: 0 0 0 1px var(--ocean-border);
+}
+
+.avatar .avatar-fun {
+  display: none;
+}
+
+html.sea-on .avatar .avatar-fun {
+  display: block;
+}
+
+html.sea-on .avatar .avatar-pro {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .avatar,
+  .avatar img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.cv-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #ffffff;
+  padding: 1px;
+  vertical-align: -4px;
+  margin-right: 2px;
+}
