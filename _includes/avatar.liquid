@@ -1,0 +1,11 @@
+{% comment %} Photo beside the name: "pro" normally, "fun" in sea mode. Pass size= in px. {% endcomment %}
+{% if site.avatar %}
+  {% assign avatar_fun = site.avatar.fun %}
+  {% assign avatar_pro = site.avatar.pro | default: site.avatar.fun %}
+  {% unless avatar_fun contains '://' %}{% assign avatar_fun = avatar_fun | prepend: 'assets/img/' | relative_url %}{% endunless %}
+  {% unless avatar_pro contains '://' %}{% assign avatar_pro = avatar_pro | prepend: 'assets/img/' | relative_url %}{% endunless %}
+  <span class="avatar {{ include.class }}" aria-hidden="true">
+    <img class="avatar-pro" src="{{ avatar_pro }}" alt="" width="{{ include.size }}" height="{{ include.size }}">
+    <img class="avatar-fun" src="{{ avatar_fun }}" alt="" width="{{ include.size }}" height="{{ include.size }}" loading="lazy">
+  </span>
+{% endif %}

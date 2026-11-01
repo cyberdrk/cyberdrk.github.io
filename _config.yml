@@ -3,6 +3,11 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
+# Photo beside your name (top bar and About page): "fun" shows in sea mode, "pro" otherwise.
+# For pro, upload your LinkedIn photo as assets/img/prof_pic.jpg and uncomment the pro line.
+avatar:
+  fun: https://github.com/cyberdrk.png?size=240
+  # pro: prof_pic.jpg
 first_name: Dipti
 middle_name: R.
 last_name: Kulkarni

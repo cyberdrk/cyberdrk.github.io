@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /tech/
-title: tech
+title: Tech
 description: My tech bio.
 nav: true
 nav_order: 4
