@@ -58,12 +58,13 @@ jobs:
           npm install -g purgecss@8.0.0
           purgecss -c purgecss.config.js
       - name: Save preview of the built site 👀
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        # Only for pull requests from this repo (never from forks)
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4
         with:
-          name: site-preview
-          path: _site
-          retention-days: 7
+          folder: _site
+          branch: site-preview
+          single-commit: true
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4
