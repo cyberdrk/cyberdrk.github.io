@@ -2,7 +2,17 @@
 layout: default
 ---
 <div class="post">
-  <header class="post-header">
+  <header class="post-header{% if page.avatar %} has-avatar{% endif %}">
+    {% if page.avatar %}
+      {% assign avatar_fun = page.avatar.fun %}
+      {% assign avatar_pro = page.avatar.pro | default: page.avatar.fun %}
+      {% unless avatar_fun contains '://' %}{% assign avatar_fun = avatar_fun | prepend: 'assets/img/' | relative_url %}{% endunless %}
+      {% unless avatar_pro contains '://' %}{% assign avatar_pro = avatar_pro | prepend: 'assets/img/' | relative_url %}{% endunless %}
+      <span class="avatar" aria-hidden="true">
+        <img class="avatar-pro" src="{{ avatar_pro }}" alt="" width="88" height="88">
+        <img class="avatar-fun" src="{{ avatar_fun }}" alt="" width="88" height="88" loading="lazy">
+      </span>
+    {% endif %}
     <h1 class="post-title">
       {% if site.title == 'blank' %}
         <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}

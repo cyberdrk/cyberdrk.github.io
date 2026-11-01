@@ -1,4 +1,5 @@
-# CV content. Links point to the matching sections of LinkedIn.
+# CV content. "logo" is the organization's website; its site icon is shown.
+# Links point to the matching sections of LinkedIn.
 # LinkedIn sections: https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/<experience|education|honors|certifications|featured>/
 
 - title: General Information
@@ -20,6 +21,7 @@
   contents:
     - title: Investment Professional, Private Credit
       institution: Nixa Asset Management
+      logo: nixainvestments.com
       year: Mar 2025 – Present
       location: Mumbai
       description:
@@ -27,6 +29,7 @@
         - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">View on LinkedIn ↗</a>
     - title: Analyst, Global Markets – India Equities (Front Office)
       institution: BNP Paribas CIB
+      logo: bnpparibas.com
       year: Apr 2024 – Jan 2025
       location: Mumbai
       description:
@@ -35,6 +38,7 @@
         - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">View on LinkedIn ↗</a>
     - title: Fund Manager, Joka Advantage Fund
       institution: Finance and Investments Club, IIM Calcutta
+      logo: iimcal.ac.in
       year: Jun 2023 – Apr 2024
       location: Kolkata
       description:
@@ -42,6 +46,7 @@
         - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">View on LinkedIn ↗</a>
     - title: Discretionary Trading Intern (awarded PPO)
       institution: Edelweiss Global Markets
+      logo: edelweissfin.com
       year: Apr 2023 – Jun 2023
       location: Mumbai
       description:
@@ -51,6 +56,7 @@
         - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">New joinee feature and details on LinkedIn ↗</a>
     - title: Software Engineer, Research and Development
       institution: Protegrity (Cloud and Data Security)
+      logo: protegrity.com
       year: Jan 2021 – Mar 2022
       location: Remote
       description:
@@ -59,6 +65,7 @@
         - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">View on LinkedIn ↗</a>
     - title: Software Engineer I, Robotics Systems and Science
       institution: Rapyuta Robotics
+      logo: rapyuta-robotics.com
       year: Nov 2019 – Aug 2020
       location: Bengaluru
       description:
@@ -68,6 +75,7 @@
         - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">View on LinkedIn ↗</a>
     - title: Software Engineer I, Robotics Systems and Science
       institution: Rapyuta Robotics
+      logo: rapyuta-robotics.com
       year: Jul 2019 – Nov 2019
       location: Tokyo
       description:
@@ -76,6 +84,7 @@
         - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">Expo press coverage and media on LinkedIn ↗</a>
     - title: Research Intern, Imaging Systems Laboratory
       institution: Changwon National University
+      logo: changwon.ac.kr
       year: May 2018 – Jul 2018
       location: South Korea
       description:
@@ -89,6 +98,7 @@
   contents:
     - title: MBA
       institution: Indian Institute of Management Calcutta
+      logo: iimcal.ac.in
       year: 2022 – 2024
       description:
         - Aditya Birla Scholar, Class of 2022–23 (sole recipient at IIM Calcutta)
@@ -99,6 +109,7 @@
         - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/education/">View on LinkedIn ↗</a>
     - title: B.Tech., Electronics Engineering
       institution: Veermata Jijabai Technological Institute (VJTI), Mumbai
+      logo: vjti.ac.in
       year: 2015 – 2019
       description:
         - First Class; Double Award Winner, Department of Electrical Engineering

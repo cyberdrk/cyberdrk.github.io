@@ -84,7 +84,12 @@ body {
 
 /* Roboto, the theme's original face: light for reading, heavier only for headings */
 body {
-  font-family: "Roboto", -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
   font-weight: 300;
   font-size: 1.02rem;
   line-height: 1.7;
@@ -100,7 +105,12 @@ h6,
 .card-title,
 .navbar-brand,
 .navbar .nav-link {
-  font-family: "Roboto", -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
   color: var(--ocean-text);
   letter-spacing: 0;
 }
@@ -187,8 +197,8 @@ b {
     pointer-events: none;
   }
 
-  .navbar .nav-item > a.nav-link:hover::after,
-  .navbar .nav-item > a.nav-link:focus-visible::after {
+  html.sea-on .navbar .nav-item > a.nav-link:hover::after,
+  html.sea-on .navbar .nav-item > a.nav-link:focus-visible::after {
     transform: translateY(0);
   }
 }
@@ -218,6 +228,18 @@ footer {
   overflow: hidden;
   pointer-events: none;
   color: var(--ocean-line);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.6s ease,
+    visibility 0s linear 0.6s;
+}
+
+/* Creatures appear only in sea mode */
+html.sea-on .ocean {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease;
 }
 
 .ocean svg {
@@ -232,51 +254,173 @@ footer {
 }
 
 /* Kept toward the edges so text stays clear */
-.ocean .jelly { top: 9%; left: 2%; width: 92px; height: 110px; animation-duration: 10s; }
-.ocean .whale { top: 14%; right: 3%; width: 150px; height: 104px; animation-duration: 12s; animation-delay: -3s; }
-.ocean .star { top: 40%; left: 4%; width: 70px; height: 70px; animation-duration: 8s; animation-delay: -2s; }
-.ocean .horse { top: 42%; right: 4%; width: 66px; height: 108px; animation-duration: 11s; animation-delay: -5s; }
-.ocean .octo { top: 66%; left: 2%; width: 100px; height: 100px; animation-duration: 13s; animation-delay: -4s; }
-.ocean .turtle { top: 70%; right: 5%; width: 120px; height: 90px; animation-name: ocean-swim; animation-duration: 18s; }
-.ocean .crab { bottom: 3%; left: 22%; width: 96px; height: 72px; animation-name: ocean-scuttle; animation-duration: 6s; }
-.ocean .shell { bottom: 4%; right: 24%; width: 64px; height: 58px; animation-duration: 14s; }
-.ocean .dolphin { top: 25%; left: 1%; width: 110px; height: 78px; animation-name: ocean-swim; animation-duration: 16s; animation-delay: -6s; }
-.ocean .weed1 { bottom: -6px; left: 6%; width: 70px; height: 110px; animation-name: ocean-sway; animation-duration: 7s; transform-origin: bottom center; }
-.ocean .weed2 { bottom: -6px; right: 8%; width: 60px; height: 96px; animation-name: ocean-sway; animation-duration: 8s; animation-delay: -3s; transform-origin: bottom center; }
-.ocean .bub1 { bottom: -90px; left: 34%; width: 40px; height: 54px; animation: ocean-rise 18s linear infinite; }
-.ocean .bub2 { bottom: -90px; right: 34%; width: 32px; height: 44px; animation: ocean-rise 22s linear infinite; animation-delay: -9s; }
+.ocean .jelly {
+  top: 9%;
+  left: 2%;
+  width: 92px;
+  height: 110px;
+  animation-duration: 10s;
+}
+.ocean .whale {
+  top: 14%;
+  right: 3%;
+  width: 150px;
+  height: 104px;
+  animation-duration: 12s;
+  animation-delay: -3s;
+}
+.ocean .star {
+  top: 40%;
+  left: 4%;
+  width: 70px;
+  height: 70px;
+  animation-duration: 8s;
+  animation-delay: -2s;
+}
+.ocean .horse {
+  top: 42%;
+  right: 4%;
+  width: 66px;
+  height: 108px;
+  animation-duration: 11s;
+  animation-delay: -5s;
+}
+.ocean .octo {
+  top: 66%;
+  left: 2%;
+  width: 100px;
+  height: 100px;
+  animation-duration: 13s;
+  animation-delay: -4s;
+}
+.ocean .turtle {
+  top: 70%;
+  right: 5%;
+  width: 120px;
+  height: 90px;
+  animation-name: ocean-swim;
+  animation-duration: 18s;
+}
+.ocean .crab {
+  bottom: 3%;
+  left: 22%;
+  width: 96px;
+  height: 72px;
+  animation-name: ocean-scuttle;
+  animation-duration: 6s;
+}
+.ocean .shell {
+  bottom: 4%;
+  right: 24%;
+  width: 64px;
+  height: 58px;
+  animation-duration: 14s;
+}
+.ocean .dolphin {
+  top: 25%;
+  left: 1%;
+  width: 110px;
+  height: 78px;
+  animation-name: ocean-swim;
+  animation-duration: 16s;
+  animation-delay: -6s;
+}
+.ocean .weed1 {
+  bottom: -6px;
+  left: 6%;
+  width: 70px;
+  height: 110px;
+  animation-name: ocean-sway;
+  animation-duration: 7s;
+  transform-origin: bottom center;
+}
+.ocean .weed2 {
+  bottom: -6px;
+  right: 8%;
+  width: 60px;
+  height: 96px;
+  animation-name: ocean-sway;
+  animation-duration: 8s;
+  animation-delay: -3s;
+  transform-origin: bottom center;
+}
+.ocean .bub1 {
+  bottom: -90px;
+  left: 34%;
+  width: 40px;
+  height: 54px;
+  animation: ocean-rise 18s linear infinite;
+}
+.ocean .bub2 {
+  bottom: -90px;
+  right: 34%;
+  width: 32px;
+  height: 44px;
+  animation: ocean-rise 22s linear infinite;
+  animation-delay: -9s;
+}
 
 @keyframes ocean-bob {
   0%,
-  100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-14px) rotate(3deg); }
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(3deg);
+  }
 }
 
 @keyframes ocean-swim {
   0%,
-  100% { transform: translateX(0) translateY(0); }
-  25% { transform: translateX(22px) translateY(-8px); }
-  50% { transform: translateX(44px) translateY(0); }
-  75% { transform: translateX(22px) translateY(8px); }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(22px) translateY(-8px);
+  }
+  50% {
+    transform: translateX(44px) translateY(0);
+  }
+  75% {
+    transform: translateX(22px) translateY(8px);
+  }
 }
 
 @keyframes ocean-scuttle {
   0%,
-  100% { transform: translateX(0); }
-  50% { transform: translateX(30px); }
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
 }
 
 @keyframes ocean-sway {
   0%,
-  100% { transform: rotate(-4deg); }
-  50% { transform: rotate(4deg); }
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
 }
 
 @keyframes ocean-rise {
-  0% { transform: translateY(0); opacity: 0; }
-  10% { opacity: 1; }
-  85% { opacity: 1; }
-  100% { transform: translateY(-115vh); opacity: 0; }
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-115vh);
+    opacity: 0;
+  }
 }
 
 /* ---------- Sections and the dolphin fin on hover ---------- */
@@ -324,8 +468,8 @@ footer {
   pointer-events: none;
 }
 
-.ocean-section:hover::after,
-.cv .card:hover::after {
+html.sea-on .ocean-section:hover::after,
+html.sea-on .cv .card:hover::after {
   transform: translateY(0);
   opacity: 1;
   right: 60%;
@@ -333,66 +477,96 @@ footer {
 
 /* ---------- Starfish cursor: smiles, and winks when you click ---------- */
 
-html,
-body,
-a,
-button,
-label,
-summary,
-[role="button"],
-.nav-link {
+/* Only in sea mode */
+html.sea-on,
+html.sea-on body,
+html.sea-on a,
+html.sea-on button,
+html.sea-on label,
+html.sea-on summary,
+html.sea-on [role="button"],
+html.sea-on .nav-link {
   cursor:
     url("../img/cursor-starfish.svg") 16 3,
     auto;
 }
 
-html.starfish-wink,
-html.starfish-wink * {
+html.sea-on.starfish-wink,
+html.sea-on.starfish-wink * {
   cursor:
     url("../img/cursor-starfish-wink.svg") 16 3,
     auto !important;
 }
 
-input,
-textarea,
-[contenteditable="true"] {
+html.sea-on input,
+html.sea-on textarea,
+html.sea-on [contenteditable="true"] {
   cursor: text;
 }
 
 /* ---------- Phones, reduced motion, print ---------- */
 
 @media (max-width: 768px) {
-  .ocean { color: var(--ocean-line-soft); }
+  .ocean {
+    color: var(--ocean-line-soft);
+  }
   .ocean .dolphin,
   .ocean .star,
   .ocean .horse,
   .ocean .shell,
-  .ocean .bub2 { display: none; }
-  .ocean .jelly { width: 60px; height: 72px; }
-  .ocean .whale { width: 96px; height: 66px; }
+  .ocean .bub2 {
+    display: none;
+  }
+  .ocean .jelly {
+    width: 60px;
+    height: 72px;
+  }
+  .ocean .whale {
+    width: 96px;
+    height: 66px;
+  }
   .ocean .octo,
-  .ocean .turtle { width: 72px; height: 60px; }
+  .ocean .turtle {
+    width: 72px;
+    height: 60px;
+  }
   .ocean-section,
-  .cv .card { padding: 1rem 1.1rem; }
+  .cv .card {
+    padding: 1rem 1.1rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ocean svg { animation: none !important; }
+  .ocean svg {
+    animation: none !important;
+  }
   .ocean .bub1,
-  .ocean .bub2 { display: none; }
+  .ocean .bub2 {
+    display: none;
+  }
   .ocean-section,
   .cv .card,
   .ocean-section::after,
   .cv .card::after,
-  .navbar .nav-item > a.nav-link::after { transition: none; }
+  .navbar .nav-item > a.nav-link::after {
+    transition: none;
+  }
 }
 
 @media print {
-  .ocean { display: none; }
+  .ocean {
+    display: none;
+  }
   html,
-  body { background: #ffffff; }
+  body {
+    background: #ffffff;
+  }
   .ocean-section,
-  .cv .card { background: none; border: 0; box-shadow: none; }
+  .cv .card {
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
 }
 
 /* CV date badges: wrap long ranges ("Mar 2025 – Present") instead of overlapping the title */
@@ -402,4 +576,126 @@ textarea,
   padding: 0.3em 0.45em;
   max-width: 82px;
   min-width: 0 !important;
+}
+
+/* ---------- Sea mode switch in the menu ---------- */
+
+.sea-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.35rem 0.4rem 0;
+  padding: 0.2rem 0.3rem;
+  border: 0;
+  background: none;
+  color: var(--ocean-text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.sea-switch:focus-visible {
+  outline: 2px solid var(--ocean-accent);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+.sea-switch-track {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--ocean-border);
+  box-shadow: inset 0 0 0 1px var(--ocean-line);
+  transition: background 0.3s ease;
+}
+
+.sea-switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.3s ease;
+}
+
+/* On: the track fills with sea and the knob becomes the smiling starfish */
+.sea-switch[aria-checked="true"] .sea-switch-track {
+  background: linear-gradient(90deg, #39b6d0, #0a7ea4);
+}
+
+.sea-switch[aria-checked="true"] .sea-switch-knob {
+  transform: translateX(18px) rotate(360deg);
+  background: transparent url("../img/cursor-starfish.svg") no-repeat center / 20px 20px;
+  box-shadow: none;
+}
+
+/* ---------- Photo beside the name ---------- */
+
+.post-header.has-avatar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.1rem;
+  align-items: center;
+}
+
+.post-header.has-avatar .desc {
+  grid-column: 2;
+  margin-bottom: 0;
+}
+
+.post-header.has-avatar .post-title {
+  margin-bottom: 0.15rem;
+}
+
+.avatar {
+  grid-row: span 2;
+  display: block;
+  width: 88px;
+  height: 88px;
+}
+
+.avatar img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--ocean-glass);
+  box-shadow: 0 0 0 1px var(--ocean-border);
+}
+
+.avatar .avatar-fun {
+  display: none;
+}
+
+html.sea-on .avatar .avatar-fun {
+  display: block;
+}
+
+html.sea-on .avatar .avatar-pro {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .avatar,
+  .avatar img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.cv-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #ffffff;
+  padding: 1px;
+  vertical-align: -4px;
+  margin-right: 2px;
 }

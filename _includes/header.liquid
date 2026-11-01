@@ -125,6 +125,13 @@
               </button>
             </li>
           {% endif %}
+          <!-- Sea mode: turns the ocean creatures, starfish cursor and fins on or off -->
+          <li class="nav-item sea-switch-item">
+            <button id="sea-switch" class="sea-switch" type="button" role="switch" aria-checked="false" title="Sea mode">
+              <span class="sea-switch-track" aria-hidden="true"><span class="sea-switch-knob"></span></span>
+              <span class="sea-switch-label">sea mode</span>
+            </button>
+          </li>
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
             <li class="toggle-container">

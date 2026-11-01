@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /achievements/
-title: achievements
+title: Achievements
 description: Awards, competitions, certifications and the adventures in between.
 nav: true
 nav_order: 3
