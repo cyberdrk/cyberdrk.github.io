@@ -82,11 +82,12 @@ body {
   color: var(--ocean-text);
 }
 
-/* Carlito is a free font made to match Calibri */
+/* Roboto, the theme's original face: light for reading, heavier only for headings */
 body {
-  font-family: "Carlito", Calibri, "Segoe UI", Arial, sans-serif;
-  font-size: 1.08rem;
-  line-height: 1.65;
+  font-family: "Roboto", -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.02rem;
+  line-height: 1.7;
 }
 
 h1,
@@ -99,21 +100,26 @@ h6,
 .card-title,
 .navbar-brand,
 .navbar .nav-link {
-  font-family: "Carlito", Calibri, "Segoe UI", Arial, sans-serif;
+  font-family: "Roboto", -apple-system, "Segoe UI", Arial, sans-serif;
   color: var(--ocean-text);
-  letter-spacing: 0.005em;
+  letter-spacing: 0;
 }
 
 h1,
 .post-title {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 h2,
 h3,
 h4,
 .card-title {
-  font-weight: 700;
+  font-weight: 400;
+}
+
+strong,
+b {
+  font-weight: 500;
 }
 
 /* Name in one even weight (no bold first name) */
@@ -152,11 +158,39 @@ b {
 }
 
 .navbar .nav-link {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .navbar .nav-item.active > .nav-link {
-  font-weight: 700;
+  font-weight: 500;
+}
+
+/* Dolphin fin pops up under a menu tab on hover */
+@media (min-width: 576px) {
+  .navbar .nav-item > a.nav-link {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 1.15rem;
+  }
+
+  .navbar .nav-item > a.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 22px;
+    height: 18px;
+    margin-left: -11px;
+    background: url("../img/dolphin-fin.svg") no-repeat center bottom / contain;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+  }
+
+  .navbar .nav-item > a.nav-link:hover::after,
+  .navbar .nav-item > a.nav-link:focus-visible::after {
+    transform: translateY(0);
+  }
 }
 
 /* Keep page content above the creatures (navbar is already fixed-position) */
@@ -349,7 +383,8 @@ textarea,
   .ocean-section,
   .cv .card,
   .ocean-section::after,
-  .cv .card::after { transition: none; }
+  .cv .card::after,
+  .navbar .nav-item > a.nav-link::after { transition: none; }
 }
 
 @media print {
@@ -358,4 +393,13 @@ textarea,
   body { background: #ffffff; }
   .ocean-section,
   .cv .card { background: none; border: 0; box-shadow: none; }
+}
+
+/* CV date badges: wrap long ranges ("Mar 2025 – Present") instead of overlapping the title */
+.cv .table-cv .badge {
+  white-space: normal;
+  line-height: 1.35;
+  padding: 0.3em 0.45em;
+  max-width: 82px;
+  min-width: 0 !important;
 }

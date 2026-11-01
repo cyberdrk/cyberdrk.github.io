@@ -4,7 +4,7 @@ permalink: /tech/
 title: tech
 description: My tech bio.
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 ## About Me
