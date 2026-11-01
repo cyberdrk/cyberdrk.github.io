@@ -11,7 +11,7 @@ nav_order: 3
 
 I am a Robotics and AI professional with global experience across Japan, South Korea, and India. My work spans **collaborative robotics**, **warehouse automation**, **cloud-based secure software development**, and **computer vision** research.
 
----
+<section class="ocean-section" markdown="1">
 
 ### 🧠 Areas of Work and Research
 
@@ -24,7 +24,9 @@ I am a Robotics and AI professional with global experience across Japan, South K
 - **Embedded Systems and IoT**  
   Practical experience with **Raspberry Pi**, **Arduino**, and **microcontrollers** for robotics and automation projects.
 
----
+</section>
+
+<section class="ocean-section" markdown="1">
 
 ### 🔧 Technical Skills
 
@@ -37,7 +39,9 @@ I am a Robotics and AI professional with global experience across Japan, South K
 - **Microcomputers**:  
   [`Raspberry Pi`](https://www.raspberrypi.com/), [`Arduino`](https://www.arduino.cc/)
 
----
+</section>
+
+<section class="ocean-section" markdown="1">
 
 ### 🌏 International Experience
 
@@ -50,7 +54,9 @@ I am a Robotics and AI professional with global experience across Japan, South K
 - **India**:  
   R&D work in secure cloud software development. Consulting experience in AI, Machine Learning, and IoT.
 
----
+</section>
+
+<section class="ocean-section" markdown="1">
 
 ### 🎓 Education
 
@@ -58,7 +64,9 @@ I am a Robotics and AI professional with global experience across Japan, South K
 [Veermata Jijabai Technological Institute (VJTI)](https://vjti.ac.in/), Mumbai  
 One of Asia’s oldest and most prestigious engineering institutions.
 
----
+</section>
+
+<section class="ocean-section" markdown="1">
 
 ### 🏆 Achievements
 
@@ -70,6 +78,6 @@ One of Asia’s oldest and most prestigious engineering institutions.
   Selected as a **Pre-Finalist**.  
   [Competition by IIT Bombay](https://www.e-yantra.org/)
 
----
+</section>
 
 Feel free to explore my work in AI, Robotics, and Emerging Tech across global frontiers!

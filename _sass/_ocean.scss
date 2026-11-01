@@ -1,48 +1,44 @@
 /*******************************************************************************
- * Ocean theme: light turquoise background, dark navy text,
- * and sea creatures drifting gently behind the content.
+ * Ocean theme: light turquoise background, dark navy text, outline sea
+ * creatures drifting behind the content, a dolphin fin that pops up when you
+ * hover a section, and a smiling starfish cursor that winks on click.
  ******************************************************************************/
 
 :root,
 html[data-theme="light"] {
   --ocean-navy: #0b2e59;
-  --ocean-navy-soft: #36597d;
+  --ocean-navy-soft: #3b5f82;
   --ocean-teal: #0a7ea4;
-  --ocean-foam: rgba(255, 255, 255, 0.72);
+  --ocean-line: rgba(11, 46, 89, 0.22);
+  --ocean-glass: rgba(255, 255, 255, 0.55);
 
-  --global-bg-color: #dff6f8;
+  --global-bg-color: #def5f7;
   --global-text-color: var(--ocean-navy);
   --global-text-color-light: var(--ocean-navy-soft);
   --global-theme-color: var(--ocean-teal);
   --global-hover-color: var(--ocean-teal);
   --global-hover-text-color: #ffffff;
-  --global-card-bg-color: var(--ocean-foam);
+  --global-card-bg-color: var(--ocean-glass);
   --global-divider-color: rgba(11, 46, 89, 0.12);
-  --global-footer-bg-color: var(--ocean-navy);
-  --global-footer-text-color: #cfeff4;
-  --global-footer-link-color: #ffffff;
+  --global-footer-bg-color: transparent;
+  --global-footer-text-color: var(--ocean-navy-soft);
+  --global-footer-link-color: var(--ocean-navy);
   --global-code-bg-color: rgba(10, 126, 164, 0.08);
   --global-back-to-top-bg-color: rgba(11, 46, 89, 0.55);
 }
 
+/* ---------- Background and type ---------- */
+
 html,
 body {
-  background: linear-gradient(180deg, #c9f1f4 0%, #dff6f8 35%, #b6e8f0 100%) fixed;
+  background: linear-gradient(180deg, #cdf2f5 0%, #e3f7f9 45%, #c4ecf2 100%) fixed;
   color: var(--ocean-navy);
 }
 
-/* Navbar: frosted sea glass so creatures peek through softly */
-.navbar,
-.navbar.navbar-light {
-  background-color: rgba(223, 246, 248, 0.78) !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 1px 0 rgba(11, 46, 89, 0.08);
-}
-
-.navbar-brand,
-.navbar .nav-link {
-  color: var(--ocean-navy) !important;
+body {
+  font-family: "Nunito", -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.7;
 }
 
 h1,
@@ -51,23 +47,68 @@ h3,
 h4,
 h5,
 h6,
-.post-title {
+.post-title,
+.card-title,
+.navbar-brand,
+.navbar .nav-link {
+  font-family: "Fredoka", "Nunito", sans-serif;
   color: var(--ocean-navy);
+  letter-spacing: 0.01em;
+}
+
+.post-title {
+  font-weight: 500;
+}
+
+.post-title .font-weight-bold {
+  font-weight: 600 !important;
+}
+
+.desc,
+.post-description {
+  color: var(--ocean-navy-soft);
 }
 
 a {
   color: var(--ocean-teal);
 }
 
-/* Keep page content above the floating creatures */
-.container,
+strong,
+b {
+  color: var(--ocean-navy);
+}
+
+/* Navbar: frosted sea glass */
 .navbar,
+.navbar.navbar-light {
+  background-color: rgba(222, 245, 247, 0.75) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(11, 46, 89, 0.08);
+}
+
+.navbar .nav-link {
+  color: var(--ocean-navy) !important;
+  font-weight: 500;
+}
+
+/* Keep page content above the creatures (navbar is already fixed-position) */
+.container[role="main"],
 footer {
   position: relative;
   z-index: 1;
 }
 
-/* ---------- Floating sea creatures ---------- */
+.navbar {
+  z-index: 1030;
+}
+
+footer {
+  padding: 1.2rem 0;
+  font-size: 0.85rem;
+}
+
+/* ---------- Outline creatures in the background ---------- */
 
 .ocean {
   position: fixed;
@@ -75,92 +116,118 @@ footer {
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  color: var(--ocean-line);
 }
 
-.ocean span {
+.ocean svg {
   position: absolute;
-  display: block;
-  line-height: 1;
-  opacity: 0.5;
-  user-select: none;
-  animation: ocean-bob 7s ease-in-out infinite;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+  animation: ocean-bob 9s ease-in-out infinite;
 }
 
-.ocean .starfish {
-  width: 2.6rem;
-  height: 2.6rem;
-}
-
-/* Positions, sizes and timings: kept toward the edges so text stays clear */
-.ocean .c1 { top: 12%; left: 3%; font-size: 2.6rem; animation-duration: 8s; }
-.ocean .c2 { top: 22%; right: 4%; font-size: 2.2rem; animation-duration: 9s; animation-delay: -2s; }
-.ocean .c3 { top: 46%; left: 5%; animation-duration: 10s; animation-delay: -4s; }
-.ocean .c4 { top: 64%; right: 6%; font-size: 3rem; animation-duration: 11s; animation-delay: -1s; }
-.ocean .c5 { top: 82%; left: 8%; font-size: 2rem; animation-duration: 7s; animation-delay: -3s; }
-.ocean .c6 { top: 88%; right: 12%; animation-duration: 9s; animation-delay: -5s; }
-.ocean .c7 { top: 34%; right: 15%; font-size: 1.8rem; animation-duration: 12s; animation-delay: -6s; }
-.ocean .c8 { top: 72%; left: 18%; font-size: 1.7rem; animation-duration: 10s; animation-delay: -2s; }
-
-/* Dolphins swim side to side */
-.ocean .swim {
-  animation-name: ocean-swim;
-}
-
-/* Bubbles rise from the bottom */
-.ocean .bubble {
-  bottom: -3rem;
-  font-size: 1.4rem;
-  opacity: 0.45;
-  animation: ocean-rise 14s linear infinite;
-}
-.ocean .b1 { left: 22%; animation-delay: 0s; }
-.ocean .b2 { left: 48%; animation-delay: -5s; font-size: 1.1rem; }
-.ocean .b3 { left: 76%; animation-delay: -9s; }
-.ocean .b4 { left: 90%; animation-delay: -2s; font-size: 1rem; }
+/* Kept toward the edges so text stays clear */
+.ocean .jelly { top: 9%; left: 2%; width: 92px; height: 110px; animation-duration: 10s; }
+.ocean .whale { top: 14%; right: 3%; width: 150px; height: 104px; animation-duration: 12s; animation-delay: -3s; }
+.ocean .star { top: 40%; left: 4%; width: 70px; height: 70px; animation-duration: 8s; animation-delay: -2s; }
+.ocean .horse { top: 42%; right: 4%; width: 66px; height: 108px; animation-duration: 11s; animation-delay: -5s; }
+.ocean .octo { top: 66%; left: 2%; width: 100px; height: 100px; animation-duration: 13s; animation-delay: -4s; }
+.ocean .turtle { top: 70%; right: 5%; width: 120px; height: 90px; animation-name: ocean-swim; animation-duration: 18s; }
+.ocean .crab { bottom: 3%; left: 22%; width: 96px; height: 72px; animation-name: ocean-scuttle; animation-duration: 6s; }
+.ocean .shell { bottom: 4%; right: 24%; width: 64px; height: 58px; animation-duration: 14s; }
+.ocean .dolphin { top: 25%; left: 1%; width: 110px; height: 78px; animation-name: ocean-swim; animation-duration: 16s; animation-delay: -6s; }
+.ocean .weed1 { bottom: -6px; left: 6%; width: 70px; height: 110px; animation-name: ocean-sway; animation-duration: 7s; transform-origin: bottom center; }
+.ocean .weed2 { bottom: -6px; right: 8%; width: 60px; height: 96px; animation-name: ocean-sway; animation-duration: 8s; animation-delay: -3s; transform-origin: bottom center; }
+.ocean .bub1 { bottom: -90px; left: 34%; width: 40px; height: 54px; animation: ocean-rise 18s linear infinite; }
+.ocean .bub2 { bottom: -90px; right: 34%; width: 32px; height: 44px; animation: ocean-rise 22s linear infinite; animation-delay: -9s; }
 
 @keyframes ocean-bob {
   0%,
-  100% { transform: translateY(0) rotate(-4deg); }
-  50% { transform: translateY(-14px) rotate(4deg); }
+  100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
 }
 
 @keyframes ocean-swim {
   0%,
   100% { transform: translateX(0) translateY(0); }
-  25% { transform: translateX(18px) translateY(-8px); }
-  50% { transform: translateX(36px) translateY(0); }
-  75% { transform: translateX(18px) translateY(8px); }
+  25% { transform: translateX(22px) translateY(-8px); }
+  50% { transform: translateX(44px) translateY(0); }
+  75% { transform: translateX(22px) translateY(8px); }
+}
+
+@keyframes ocean-scuttle {
+  0%,
+  100% { transform: translateX(0); }
+  50% { transform: translateX(30px); }
+}
+
+@keyframes ocean-sway {
+  0%,
+  100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
 }
 
 @keyframes ocean-rise {
   0% { transform: translateY(0); opacity: 0; }
-  10% { opacity: 0.45; }
-  90% { opacity: 0.45; }
-  100% { transform: translateY(-110vh); opacity: 0; }
+  10% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateY(-115vh); opacity: 0; }
 }
 
-/* Phones: fewer, smaller creatures */
-@media (max-width: 576px) {
-  .ocean span { font-size: 1.5rem !important; opacity: 0.35; }
-  .ocean .starfish { width: 1.6rem; height: 1.6rem; }
-  .ocean .c3,
-  .ocean .c7,
-  .ocean .c8,
-  .ocean .b2,
-  .ocean .b4 { display: none; }
+/* ---------- Sections and the dolphin fin on hover ---------- */
+
+.ocean-section,
+.cv .card {
+  position: relative;
+  overflow: hidden;
+  background: var(--ocean-glass);
+  border: 1px solid rgba(11, 46, 89, 0.08);
+  border-radius: 18px;
+  padding: 1.1rem 1.4rem 2.4rem;
+  margin-bottom: 1.2rem;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
-/* Respect visitors who prefer less motion */
-@media (prefers-reduced-motion: reduce) {
-  .ocean span { animation: none !important; }
-  .ocean .bubble { display: none; }
+.ocean-section > :last-child {
+  margin-bottom: 0;
 }
 
-/* Printing the CV: plain white */
-@media print {
-  .ocean { display: none; }
-  html,
-  body { background: #ffffff; }
+.ocean-section:hover,
+.cv .card:hover {
+  box-shadow: 0 8px 24px rgba(10, 126, 164, 0.14);
+  transform: translateY(-2px);
+}
+
+/* The fin hides below the section's bottom edge, then glides up and along */
+.ocean-section::after,
+.cv .card::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: -2px;
+  width: 64px;
+  height: 52px;
+  background: url("../img/dolphin-fin.svg") no-repeat center bottom / contain;
+  transform: translateY(100%);
+  opacity: 0;
+  transition:
+    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.2s ease,
+    right 1.6s ease-in-out;
+  pointer-events: none;
+}
+
+.ocean-section:hover::after,
+.cv .card:hover::after {
+  transform: translateY(0);
+  opacity: 1;
+  right: 60%;
 }
 
 /* ---------- Starfish cursor: smiles, and winks when you click ---------- */
@@ -185,9 +252,43 @@ html.starfish-wink * {
     auto !important;
 }
 
-/* Text fields keep the normal typing cursor */
 input,
 textarea,
 [contenteditable="true"] {
   cursor: text;
+}
+
+/* ---------- Phones, reduced motion, print ---------- */
+
+@media (max-width: 768px) {
+  .ocean { color: rgba(11, 46, 89, 0.14); }
+  .ocean .dolphin,
+  .ocean .star,
+  .ocean .horse,
+  .ocean .shell,
+  .ocean .bub2 { display: none; }
+  .ocean .jelly { width: 60px; height: 72px; }
+  .ocean .whale { width: 96px; height: 66px; }
+  .ocean .octo,
+  .ocean .turtle { width: 72px; height: 60px; }
+  .ocean-section,
+  .cv .card { padding: 1rem 1.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocean svg { animation: none !important; }
+  .ocean .bub1,
+  .ocean .bub2 { display: none; }
+  .ocean-section,
+  .cv .card,
+  .ocean-section::after,
+  .cv .card::after { transition: none; }
+}
+
+@media print {
+  .ocean { display: none; }
+  html,
+  body { background: #ffffff; }
+  .ocean-section,
+  .cv .card { background: none; border: 0; box-shadow: none; }
 }
