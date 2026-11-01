@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Investment Professional, Private Credit · IIM Calcutta '24 (Aditya Birla Scholar) · VJTI '19
 
@@ -10,11 +10,7 @@ subtitle: Investment Professional, Private Credit · IIM Calcutta '24 (Aditya Bi
 #   image: prof_pic.jpg
 #   image_circular: true
 
-# Photo beside the name: "fun" shows in sea mode, "pro" otherwise.
-# For pro, upload your LinkedIn photo as assets/img/prof_pic.jpg and set pro: prof_pic.jpg
-avatar:
-  fun: https://github.com/cyberdrk.png?size=240
-  # pro: prof_pic.jpg
+show_avatar: true # photo settings live under "avatar" in _config.yml
 
 selected_papers: false
 social: true

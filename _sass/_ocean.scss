@@ -132,10 +132,15 @@ b {
   font-weight: 500;
 }
 
-/* Name in one even weight (no bold first name) */
+/* Name in bold (About heading and the top bar) */
 .post-title .font-weight-bold,
 .navbar-brand .font-weight-bold {
   font-weight: inherit !important;
+}
+
+.has-avatar .post-title,
+.navbar-brand.title {
+  font-weight: 500 !important;
 }
 
 .desc,
@@ -175,32 +180,60 @@ b {
   font-weight: 500;
 }
 
-/* Dolphin fin pops up under a menu tab on hover */
+/* Dolphin fins (sea mode). The fin sits below its box and slides up into
+   view by moving its background, so nothing overlaps the text. */
+.navbar .nav-item > a.nav-link::before,
+html.sea-on article h2::after,
+html.sea-on article h3::after,
+html.sea-on article h4::after,
+html.sea-on .post-title::after {
+  content: "";
+  background: url("../img/dolphin-fin.svg") no-repeat;
+  background-size: 22px 18px;
+  background-position: center 22px;
+  transition: background-position 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+/* Above each menu tab */
 @media (min-width: 576px) {
   .navbar .nav-item > a.nav-link {
     position: relative;
-    overflow: hidden;
-    padding-bottom: 1.15rem;
+    padding-top: 1.15rem;
   }
 
-  .navbar .nav-item > a.nav-link::after {
-    content: "";
+  .navbar .nav-item > a.nav-link::before {
     position: absolute;
+    top: 0;
     left: 50%;
-    bottom: 0;
     width: 22px;
     height: 18px;
     margin-left: -11px;
-    background: url("../img/dolphin-fin.svg") no-repeat center bottom / contain;
-    transform: translateY(100%);
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-    pointer-events: none;
   }
 
-  html.sea-on .navbar .nav-item > a.nav-link:hover::after,
-  html.sea-on .navbar .nav-item > a.nav-link:focus-visible::after {
-    transform: translateY(0);
+  html.sea-on .navbar .nav-item > a.nav-link:hover::before,
+  html.sea-on .navbar .nav-item > a.nav-link:focus-visible::before {
+    background-position: center 0;
   }
+}
+
+/* Beside every heading */
+html.sea-on article h2::after,
+html.sea-on article h3::after,
+html.sea-on article h4::after,
+html.sea-on .post-title::after {
+  display: inline-block;
+  width: 24px;
+  height: 18px;
+  margin-left: 0.45rem;
+  vertical-align: -1px;
+}
+
+html.sea-on article h2:hover::after,
+html.sea-on article h3:hover::after,
+html.sea-on article h4:hover::after,
+html.sea-on .post-title:hover::after {
+  background-position: center 0;
 }
 
 /* Keep page content above the creatures (navbar is already fixed-position) */
@@ -548,7 +581,11 @@ html.sea-on [contenteditable="true"] {
   .cv .card,
   .ocean-section::after,
   .cv .card::after,
-  .navbar .nav-item > a.nav-link::after {
+  .navbar .nav-item > a.nav-link::before,
+  article h2::after,
+  article h3::after,
+  article h4::after,
+  .post-title::after {
     transition: none;
   }
 }
@@ -656,19 +693,40 @@ html.sea-on [contenteditable="true"] {
 }
 
 .avatar {
-  grid-row: span 2;
   display: block;
-  width: 88px;
-  height: 88px;
+  flex: none;
 }
 
 .avatar img {
+  display: block;
+  object-fit: cover;
+  border: 2px solid var(--ocean-glass);
+  box-shadow: 0 0 0 1px var(--ocean-border);
+}
+
+/* Large rounded square on the About page */
+.avatar-large {
+  grid-row: span 2;
+}
+
+.avatar-large img {
   width: 88px;
   height: 88px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--ocean-glass);
-  box-shadow: 0 0 0 1px var(--ocean-border);
+  border-radius: 18px;
+}
+
+/* Small rounded square before the name in the top bar */
+.navbar-brand.title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.avatar-small img {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border-width: 1px;
 }
 
 .avatar .avatar-fun {
@@ -684,10 +742,10 @@ html.sea-on .avatar .avatar-pro {
 }
 
 @media (max-width: 576px) {
-  .avatar,
-  .avatar img {
+  .avatar-large img {
     width: 64px;
     height: 64px;
+    border-radius: 14px;
   }
 }
 
