@@ -4,41 +4,89 @@
  * hover a section, and a smiling starfish cursor that winks on click.
  ******************************************************************************/
 
+/* Colors are tokens so light and dark mode share every rule below.
+   Light: turquoise sea, navy text. Dark: deep navy sea, white text. */
 :root,
 html[data-theme="light"] {
-  --ocean-navy: #0b2e59;
-  --ocean-navy-soft: #3b5f82;
-  --ocean-teal: #0a7ea4;
+  --ocean-text: #0b2e59;
+  --ocean-text-soft: #3b5f82;
+  --ocean-accent: #0a7ea4;
   --ocean-line: rgba(11, 46, 89, 0.22);
+  --ocean-line-soft: rgba(11, 46, 89, 0.14);
   --ocean-glass: rgba(255, 255, 255, 0.55);
+  --ocean-border: rgba(11, 46, 89, 0.08);
+  --ocean-shadow: rgba(10, 126, 164, 0.14);
+  --ocean-nav: rgba(222, 245, 247, 0.75);
+  --ocean-sea: linear-gradient(180deg, #cdf2f5 0%, #e3f7f9 45%, #c4ecf2 100%);
 
   --global-bg-color: #def5f7;
-  --global-text-color: var(--ocean-navy);
-  --global-text-color-light: var(--ocean-navy-soft);
-  --global-theme-color: var(--ocean-teal);
-  --global-hover-color: var(--ocean-teal);
+  --global-text-color: var(--ocean-text);
+  --global-text-color-light: var(--ocean-text-soft);
+  --global-theme-color: var(--ocean-accent);
+  --global-hover-color: var(--ocean-accent);
   --global-hover-text-color: #ffffff;
   --global-card-bg-color: var(--ocean-glass);
-  --global-divider-color: rgba(11, 46, 89, 0.12);
+  --global-divider-color: var(--ocean-border);
   --global-footer-bg-color: transparent;
-  --global-footer-text-color: var(--ocean-navy-soft);
-  --global-footer-link-color: var(--ocean-navy);
+  --global-footer-text-color: var(--ocean-text-soft);
+  --global-footer-link-color: var(--ocean-text);
   --global-code-bg-color: rgba(10, 126, 164, 0.08);
   --global-back-to-top-bg-color: rgba(11, 46, 89, 0.55);
+}
+
+@mixin ocean-dark {
+  color-scheme: dark;
+  --ocean-text: #f3f8fb;
+  --ocean-text-soft: #b8d0e0;
+  --ocean-accent: #6fd6ea;
+  --ocean-line: rgba(255, 255, 255, 0.2);
+  --ocean-line-soft: rgba(255, 255, 255, 0.13);
+  --ocean-glass: rgba(255, 255, 255, 0.06);
+  --ocean-border: rgba(255, 255, 255, 0.1);
+  --ocean-shadow: rgba(0, 0, 0, 0.35);
+  --ocean-nav: rgba(6, 26, 51, 0.78);
+  --ocean-sea: linear-gradient(180deg, #061a33 0%, #0b2e59 50%, #082448 100%);
+
+  --global-bg-color: #0b2e59;
+  --global-code-bg-color: rgba(111, 214, 234, 0.1);
+  --global-back-to-top-bg-color: rgba(255, 255, 255, 0.2);
+  --global-hover-text-color: #061a33;
+}
+
+/* Visitor chose dark with the toggle */
+html[data-theme="dark"] {
+  @include ocean-dark;
+  --global-text-color: var(--ocean-text);
+  --global-text-color-light: var(--ocean-text-soft);
+  --global-theme-color: var(--ocean-accent);
+  --global-hover-color: var(--ocean-accent);
+  --global-card-bg-color: var(--ocean-glass);
+  --global-divider-color: var(--ocean-border);
+  --global-footer-bg-color: transparent;
+  --global-footer-text-color: var(--ocean-text-soft);
+  --global-footer-link-color: var(--ocean-text);
+}
+
+/* Device is in dark mode and the visitor hasn't picked light */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    @include ocean-dark;
+  }
 }
 
 /* ---------- Background and type ---------- */
 
 html,
 body {
-  background: linear-gradient(180deg, #cdf2f5 0%, #e3f7f9 45%, #c4ecf2 100%) fixed;
-  color: var(--ocean-navy);
+  background: var(--ocean-sea) fixed;
+  color: var(--ocean-text);
 }
 
+/* Carlito is a free font made to match Calibri */
 body {
-  font-family: "Nunito", -apple-system, "Segoe UI", sans-serif;
-  font-size: 1.02rem;
-  line-height: 1.7;
+  font-family: "Carlito", Calibri, "Segoe UI", Arial, sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.65;
 }
 
 h1,
@@ -51,45 +99,64 @@ h6,
 .card-title,
 .navbar-brand,
 .navbar .nav-link {
-  font-family: "Fredoka", "Nunito", sans-serif;
-  color: var(--ocean-navy);
-  letter-spacing: 0.01em;
+  font-family: "Carlito", Calibri, "Segoe UI", Arial, sans-serif;
+  color: var(--ocean-text);
+  letter-spacing: 0.005em;
 }
 
+h1,
 .post-title {
-  font-weight: 500;
+  font-weight: 400;
 }
 
-.post-title .font-weight-bold {
-  font-weight: 600 !important;
+h2,
+h3,
+h4,
+.card-title {
+  font-weight: 700;
+}
+
+/* Name in one even weight (no bold first name) */
+.post-title .font-weight-bold,
+.navbar-brand .font-weight-bold {
+  font-weight: inherit !important;
 }
 
 .desc,
 .post-description {
-  color: var(--ocean-navy-soft);
+  color: var(--ocean-text-soft);
 }
 
 a {
-  color: var(--ocean-teal);
+  color: var(--ocean-accent);
 }
 
 strong,
 b {
-  color: var(--ocean-navy);
+  color: var(--ocean-text);
 }
 
 /* Navbar: frosted sea glass */
 .navbar,
 .navbar.navbar-light {
-  background-color: rgba(222, 245, 247, 0.75) !important;
+  background-color: var(--ocean-nav) !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 1px 0 rgba(11, 46, 89, 0.08);
+  box-shadow: 0 1px 0 var(--ocean-border);
+}
+
+.navbar .nav-link,
+.navbar #light-toggle,
+.navbar #search-toggle {
+  color: var(--ocean-text) !important;
 }
 
 .navbar .nav-link {
-  color: var(--ocean-navy) !important;
-  font-weight: 500;
+  font-weight: 400;
+}
+
+.navbar .nav-item.active > .nav-link {
+  font-weight: 700;
 }
 
 /* Keep page content above the creatures (navbar is already fixed-position) */
@@ -185,7 +252,7 @@ footer {
   position: relative;
   overflow: hidden;
   background: var(--ocean-glass);
-  border: 1px solid rgba(11, 46, 89, 0.08);
+  border: 1px solid var(--ocean-border);
   border-radius: 18px;
   padding: 1.1rem 1.4rem 2.4rem;
   margin-bottom: 1.2rem;
@@ -200,7 +267,7 @@ footer {
 
 .ocean-section:hover,
 .cv .card:hover {
-  box-shadow: 0 8px 24px rgba(10, 126, 164, 0.14);
+  box-shadow: 0 8px 24px var(--ocean-shadow);
   transform: translateY(-2px);
 }
 
@@ -261,7 +328,7 @@ textarea,
 /* ---------- Phones, reduced motion, print ---------- */
 
 @media (max-width: 768px) {
-  .ocean { color: rgba(11, 46, 89, 0.14); }
+  .ocean { color: var(--ocean-line-soft); }
   .ocean .dolphin,
   .ocean .star,
   .ocean .horse,
