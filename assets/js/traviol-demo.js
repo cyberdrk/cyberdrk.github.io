@@ -148,8 +148,10 @@
     var accent = cssVar("--global-theme-color", "#0a7ea4");
 
     // Frame with the road rectangle and the stop line mapped back into perspective
+    // Draw handles and lines at a fixed on-screen size, whatever the canvas scale.
+    var k = W / Math.max(1, el.frame.clientWidth);
     fctx.drawImage(img, 0, 0, W, H);
-    fctx.lineWidth = 4;
+    fctx.lineWidth = 2.5 * k;
     fctx.strokeStyle = ok ? "#ffd400" : "#ff5a4f";
     fctx.beginPath();
     corners.forEach(function (p, i) {
@@ -163,7 +165,7 @@
       var a = apply(Hinv, 0, ly),
         b = apply(Hinv, TOP_W - 1, ly);
       fctx.strokeStyle = "#ff2d2d";
-      fctx.lineWidth = 6;
+      fctx.lineWidth = 3.5 * k;
       fctx.beginPath();
       fctx.moveTo(a[0], a[1]);
       fctx.lineTo(b[0], b[1]);
@@ -171,14 +173,14 @@
     }
     corners.forEach(function (p, i) {
       fctx.beginPath();
-      fctx.arc(p[0], p[1], dragging === i ? 22 : 17, 0, Math.PI * 2);
+      fctx.arc(p[0], p[1], (dragging === i ? 17 : 14) * k, 0, Math.PI * 2);
       fctx.fillStyle = "rgba(255, 212, 0, 0.9)";
       fctx.fill();
-      fctx.lineWidth = 3;
+      fctx.lineWidth = 2 * k;
       fctx.strokeStyle = "#111";
       fctx.stroke();
       fctx.fillStyle = "#111";
-      fctx.font = "bold 18px Roboto, sans-serif";
+      fctx.font = "bold " + Math.round(11 * k) + "px Roboto, sans-serif";
       fctx.textAlign = "center";
       fctx.textBaseline = "middle";
       fctx.fillText(NAMES[i], p[0], p[1] + 1);
@@ -239,7 +241,7 @@
   el.frame.addEventListener("pointerdown", function (e) {
     var p = toImage(e);
     var r = el.frame.getBoundingClientRect();
-    var hit = (40 * W) / r.width; // ~40 css px hit radius
+    var hit = (32 * W) / r.width; // ~32 css px hit radius
     var best = -1,
       bestD = hit;
     corners.forEach(function (c, i) {
@@ -282,6 +284,7 @@
   });
 
   // Redraw when the theme changes (canvas border colour).
+  window.addEventListener("resize", schedule);
   new MutationObserver(schedule).observe(document.documentElement, {
     attributes: true,
     attributeFilter: ["data-theme"],

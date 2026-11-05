@@ -25,7 +25,7 @@ India sees at least **22 traffic violations a minute** and **one road death ever
 
 <section class="ocean-section traviol-demo" id="traviol-demo" aria-label="Interactive TraViol walkthrough">
   <h4>Build the bird's-eye view</h4>
-  <p class="gd-lead">The camera sees the road at an angle, so a metre near the camera covers more pixels than a metre far away. Drag the four yellow corners onto a stretch of road that is rectangular in reality; the right panel shows the road from directly above, where distances are even and the stop line is a straight row. Move the stop line and watch it map back into the camera's perspective.</p>
+  <p class="gd-lead">The camera sees the road at an angle, so a metre near the camera covers more pixels than a metre far away. Drag the four yellow corners onto a stretch of road that is rectangular in reality; the bird's-eye panel shows the road from directly above, where distances are even and the stop line is a straight row. Move the stop line and watch it map back into the camera's perspective.</p>
 
   <div class="tv-stage">
     <figure class="gd-figure tv-frame-fig">
