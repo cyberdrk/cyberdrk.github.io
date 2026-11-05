@@ -40,7 +40,7 @@ nav_order: 3
 
 #### Research and engineering
 
-- Proposed a new colour gamut expansion algorithm for UHD displays; paper submitted to **IET Electronics Letters 2018**. [Internship certificate and blog ↗](https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/)
+- Proposed a new colour gamut expansion algorithm for UHD displays, raising saturation gain on a test portrait from +6% to +45%; paper submitted to **IET Electronics Letters 2018**. [Interactive demo →](/projects/color-gamut-expansion/) · [Internship certificate and blog ↗](https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/)
 - Demonstrated multi-robot collaboration to clients and press at the **Kyoto Smart City Expo 2019**, covered by the Kyoto Shimbun. [Press coverage on LinkedIn ↗](https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/)
 - Face recognition with cascaded CNNs and FaceNet at **99.67% accuracy** on the LFW dataset
 

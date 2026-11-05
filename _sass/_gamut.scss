@@ -1,0 +1,353 @@
+/*******************************************************************************
+ * Colour gamut expansion project page: stat tiles and the interactive demo.
+ ******************************************************************************/
+
+.gd-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+  margin: 1.4rem 0 1.6rem;
+}
+
+.gd-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: var(--ocean-glass, rgba(255, 255, 255, 0.55));
+  border: 1px solid var(--ocean-border, rgba(0, 0, 0, 0.08));
+}
+
+.gd-stat-value {
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--global-theme-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.gd-stat-label {
+  font-size: 0.86rem;
+  line-height: 1.4;
+  color: var(--global-text-color-light);
+}
+
+.gamut-demo h4 {
+  margin-bottom: 0.3rem;
+}
+
+.gd-lead {
+  color: var(--global-text-color-light);
+  margin-bottom: 0.9rem;
+}
+
+/* Image picker and presets */
+.gd-images,
+.gd-presets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gd-images {
+  margin-bottom: 1rem;
+}
+
+.gd-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--ocean-line, rgba(0, 0, 0, 0.2));
+  background: transparent;
+  color: var(--global-text-color);
+  font: inherit;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  cursor: pointer;
+  margin: 0;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.gd-chip:hover {
+  border-color: var(--global-theme-color);
+}
+
+.gd-chip[aria-pressed="true"] {
+  background: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+  color: var(--global-hover-text-color);
+}
+
+.gd-chip:focus-visible,
+.gd-upload:focus-within {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
+}
+
+.gd-upload input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.gd-status {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
+/* Sliders */
+.gd-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.6rem 1.4rem;
+  align-items: start;
+  margin-bottom: 1.1rem;
+}
+
+.gd-slider label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 0.2rem;
+  font-weight: 400;
+}
+
+.gd-slider output {
+  font-weight: 500;
+  color: var(--global-theme-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.gd-slider input[type="range"] {
+  width: 100%;
+  accent-color: var(--global-theme-color);
+}
+
+.gd-hint {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--global-text-color-light);
+}
+
+.gd-presets {
+  padding-top: 1.4rem;
+}
+
+/* Image + diagram */
+.gd-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.gd-figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.gd-figure figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--global-text-color-light);
+}
+
+.gd-compare {
+  --split: 50%;
+  position: relative;
+  width: 100%;
+  max-height: 560px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.gd-compare canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#gd-after {
+  clip-path: inset(0 0 0 var(--split));
+}
+
+.gd-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--split);
+  width: 2px;
+  margin-left: -1px;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.gd-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.gd-tag {
+  position: absolute;
+  top: 8px;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.75rem;
+  pointer-events: none;
+}
+
+.gd-tag-before {
+  left: 8px;
+}
+
+.gd-tag-after {
+  right: 8px;
+}
+
+#gd-split {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+#gd-split:focus-visible ~ .gd-divider,
+.gd-compare:focus-within .gd-divider {
+  background: var(--global-theme-color);
+}
+
+.gd-canvas-wrap {
+  width: 100%;
+}
+
+.gd-canvas-wrap canvas {
+  display: block;
+  width: 100%;
+}
+
+.gd-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.9rem;
+}
+
+.gd-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.gd-key {
+  display: inline-block;
+  width: 16px;
+  height: 0;
+  border-top: 2.5px solid var(--k);
+}
+
+.gd-key-dash {
+  border-top-style: dashed;
+}
+
+.gd-key-dot {
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--k);
+}
+
+/* Metrics */
+.gd-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+
+.gd-metrics div {
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid var(--ocean-border, rgba(0, 0, 0, 0.08));
+}
+
+.gd-metrics dt {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+}
+
+.gd-metrics dd {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--global-text-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.gd-sweep {
+  margin-top: 0.4rem;
+}
+
+.gd-formula {
+  overflow-x: auto;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  background: var(--global-code-bg-color);
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .gd-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .gd-presets {
+    padding-top: 0;
+  }
+
+  .gd-stage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gd-metrics {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .gd-metrics div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
