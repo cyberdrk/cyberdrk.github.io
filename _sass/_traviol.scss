@@ -1,0 +1,138 @@
+/*******************************************************************************
+ * TraViol project page. Shares the stat tiles, sliders, chips and metrics
+ * from _gamut.scss; these rules cover the bird's-eye builder and speed trap.
+ ******************************************************************************/
+
+.traviol-demo h4 {
+  margin-bottom: 0.3rem;
+}
+
+.tv-h {
+  margin-top: 1.6rem;
+}
+
+.tv-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+#tv-frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  touch-action: none;
+  cursor: grab;
+}
+
+#tv-frame:active {
+  cursor: grabbing;
+}
+
+#tv-top {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 2px solid var(--global-theme-color);
+}
+
+.tv-top-fig figcaption {
+  text-align: center;
+}
+
+.tv-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.tv-controls .gd-slider {
+  flex: 1 1 260px;
+  max-width: 420px;
+}
+
+.tv-speed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.6rem 1.4rem;
+}
+
+.tv-verdict {
+  margin: 0;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  font-weight: 500;
+  border: 1px solid var(--ocean-border, rgba(0, 0, 0, 0.08));
+}
+
+.tv-verdict[data-state="violation"] {
+  color: #b42318;
+  background: rgba(240, 68, 56, 0.12);
+  border-color: rgba(240, 68, 56, 0.35);
+}
+
+.tv-verdict[data-state="ok"] {
+  color: #067647;
+  background: rgba(23, 178, 106, 0.12);
+  border-color: rgba(23, 178, 106, 0.35);
+}
+
+html[data-theme="dark"] .tv-verdict[data-state="violation"] {
+  color: #ffb4ab;
+}
+
+html[data-theme="dark"] .tv-verdict[data-state="ok"] {
+  color: #8ee6b5;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .tv-verdict[data-state="violation"] {
+    color: #ffb4ab;
+  }
+
+  html:not([data-theme="light"]) .tv-verdict[data-state="ok"] {
+    color: #8ee6b5;
+  }
+}
+
+.tv-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+.tv-gallery figure {
+  margin: 0;
+}
+
+.tv-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.tv-gallery figcaption {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+}
+
+@media (max-width: 768px) {
+  .tv-stage,
+  .tv-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #tv-top {
+    max-width: 200px;
+  }
+}

@@ -9,10 +9,13 @@ nav_order: 4
 
 <section class="ocean-section" markdown="1">
 
-### Featured project
+### Featured projects
 
 **[Colour Gamut Expansion: making HD content use a UHD screen](/projects/color-gamut-expansion/)**
 Research internship, Changwon National University, South Korea (2018). I improved a published UHD gamut-expansion method with a second scale factor, β, raising saturation gain on a test portrait from +6% to +45%. [Try the interactive demo →](/projects/color-gamut-expansion/)
+
+**[TraViol: automatic traffic-violation detection](/projects/traviol/)**
+Team project, VJTI (2018). A single roadside camera detects vehicles, measures their speed, catches red-light jumping and locates licence plates, then sends the evidence to the cloud. Rebuilt in Python 3 with tests in 2026. [Build the bird's-eye view yourself →](/projects/traviol/)
 
 </section>
 
