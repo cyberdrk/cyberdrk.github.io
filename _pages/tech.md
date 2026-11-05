@@ -7,6 +7,15 @@ nav: true
 nav_order: 4
 ---
 
+<section class="ocean-section" markdown="1">
+
+### Featured project
+
+**[Colour Gamut Expansion: making HD content use a UHD screen](/projects/color-gamut-expansion/)**
+Research internship, Changwon National University, South Korea (2018). I improved a published UHD gamut-expansion method with a second scale factor, β, raising saturation gain on a test portrait from +6% to +45%. [Try the interactive demo →](/projects/color-gamut-expansion/)
+
+</section>
+
 ## About Me
 
 I am a Robotics and AI professional with global experience across Japan, South Korea, and India. My work spans **collaborative robotics**, **warehouse automation**, **cloud-based secure software development**, and **computer vision** research.

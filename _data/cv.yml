@@ -90,6 +90,7 @@
       description:
         - Government of South Korea funded research under Prof. Oh-Seol Kwon
         - Invertible colour gamut mapping (UHD to HD) and a new gamut expansion algorithm; paper submitted to IET Electronics Letters 2018
+        - <a href="/projects/color-gamut-expansion/">Interactive demo of the gamut expansion work →</a>
         - Single image dehazing of satellite images; face recognition with CNNs (99.67% on LFW)
         - <a href="https://www.linkedin.com/in/dipti-kulkarni-34a731144/details/experience/">Certificate, lab and internship blog on LinkedIn ↗</a>
 
